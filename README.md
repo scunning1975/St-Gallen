@@ -20,6 +20,16 @@ You will replicate recent empirical papers and work on your own applied project.
 
 ---
 
+## Assignments & Evaluation
+
+There are 31 students registered for the course, and 13 are taking the exam. Evaluation is based on three components:
+
+1. **Daily Podcasts**: Each day there will be a podcast assigned for listening. You do not need to turn in write-ups daily, but all podcast reflections will be due alongside the final exam.
+2. **Coding Exercise**: This will be conducted together in class on the final day (Friday, July 4).
+3. **Final Exam**: This is a take-home exam, due by **August 13**, submitted via Canvas. The exam will be made available shortly after the course ends. Grades (pass/fail for PhD students) must be submitted by August 15.
+
+---
+
 ## Workshop Schedule Overview
 
 **Daily Time Block (Monday through Friday)**
@@ -62,7 +72,7 @@ You will replicate recent empirical papers and work on your own applied project.
 * Continuous treatment: Estimation, interpretation, and issues
 * Replication: Abortion clinic closures as DxT case
 * (If time) Intro to synthetic control
-* Wrap-up and discussion of student projects
+* In-class coding exercise
 
 ---
 
@@ -92,6 +102,8 @@ You will replicate recent empirical papers and work on your own applied project.
 * `/slides/` — Updated lecture slides (redownload each day)
 
 GitHub Repository: [https://github.com/scunning1975/St-Gallen](https://github.com/scunning1975/St-Gallen)
+
+Canvas Course Page (HSG login required): [https://learning.unisg.ch/courses/22479](https://learning.unisg.ch/courses/22479)
 
 ---
 
