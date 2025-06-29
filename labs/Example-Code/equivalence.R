@@ -1,70 +1,144 @@
-# equivalence.R
-# author: Scott Cunningham
+# name: equivalence.R
+# author: scott cunningham  
 # description: OLS and Manual are the same
 
+# Clear workspace
+rm(list = ls())
+
+# Load required libraries
 library(haven)
 library(dplyr)
-library(tidyr)
+library(lmtest)
+library(sandwich)
 library(fixest)
 
-# Load dataset
+# Load data
 castle <- read_dta("https://github.com/scunning1975/mixtape/raw/master/castle.dta")
 
-# Clean and prep
-castle <- castle %>%
-  filter(!(effyear %in% c(2005, 2007, 2008, 2009))) %>%
-  mutate(
-    post = ifelse(year >= 2006, 1, 0),
-    treat = ifelse(effyear == 2006, 1, 0)
-  ) %>%
-  filter(year %in% c(2005, 2006))
+# Set up panel structure (R doesn't need explicit xtset like Stata)
+# Just noting that sid is the panel ID and year is time
 
-# Manual DiD Calculation
-manual <- castle %>%
-  group_by(treat, post) %>%
-  summarise(y = mean(l_homicide, na.rm = TRUE), .groups = "drop") %>%
-  pivot_wider(names_from = c(post), values_from = y, names_prefix = "post_") %>%
-  mutate(
-    did = (post_1 - post_0)[treat == 1] - (post_1 - post_0)[treat == 0]
-  )
+# Drop observations where effyear is 2005, 2007, 2008, or 2009
+castle <- castle[!(castle$effyear %in% c(2005, 2007, 2008, 2009)), ]
 
-cat("Manual DiD estimate:\n")
-print(manual$did[1])
+# Drop existing post variable if it exists and create new one
+castle$post <- NULL
+castle$post <- 0
+castle$post[castle$year >= 2006] <- 1
 
-# Example 1: OLS regression with interaction
-mod1 <- feols(l_homicide ~ post * treat, cluster = ~sid, data = castle)
-summary(mod1)
+# Create treatment variable
+castle$treat <- 0
+castle$treat[castle$effyear == 2006] <- 1
 
-# Example 2: TWFE (state and year FE)
-mod2 <- feols(l_homicide ~ i(year) + post * treat | sid, cluster = ~sid, data = castle)
-summary(mod2)
+# Keep only years 2005 and 2006
+castle <- castle[castle$year %in% c(2005, 2006), ]
 
-# Example 3: Long difference regression
-long_diff <- castle %>%
+# Manual unweighted 2x2 DiD calculation
+# Calculate group means
+y11 <- mean(castle$l_homicide[castle$treat == 1 & castle$post == 1], na.rm = TRUE)
+y10 <- mean(castle$l_homicide[castle$treat == 1 & castle$post == 0], na.rm = TRUE)
+y01 <- mean(castle$l_homicide[castle$treat == 0 & castle$post == 1], na.rm = TRUE)
+y00 <- mean(castle$l_homicide[castle$treat == 0 & castle$post == 0], na.rm = TRUE)
+
+# Add these as variables to the dataset
+castle$y11 <- y11
+castle$y10 <- y10
+castle$y01 <- y01
+castle$y00 <- y00
+
+# Calculate DiD estimator
+castle$did <- (y11 - y10) - (y01 - y00)
+
+# Display the DiD estimate
+cat("DiD Estimate:", unique(castle$did), "\n")
+summary(castle$did)
+
+# Load additional library for clustered standard errors
+library(lmtest)
+library(sandwich)
+
+# Regression Example 1: OLS regression with interactions (interactioned OLS)
+model1 <- lm(l_homicide ~ post * treat, data = castle)
+
+# Get clustered standard errors
+clustered_se <- vcovCL(model1, cluster = castle$sid)
+coeftest(model1, vcov = clustered_se)
+
+# Regression Example 2: Two-way fixed effects (state and year fixed effects)
+model2 <- feols(l_homicide ~ treat:post | sid + year, 
+                data = castle, 
+                cluster = ~sid)
+summary(model2)
+
+# Regression Example 3: Regress "long difference" onto treatment dummy
+# Create a subset for long difference (preserve/restore equivalent)
+castle_long <- castle %>%
   select(sid, year, l_homicide, treat) %>%
-  pivot_wider(names_from = year, values_from = l_homicide, names_prefix = "y") %>%
-  mutate(diff = y2006 - y2005)
+  pivot_wider(names_from = year, 
+              values_from = l_homicide, 
+              names_prefix = "l_homicide") %>%
+  mutate(diff = l_homicide2006 - l_homicide2005)
 
-mod3 <- feols(diff ~ treat, cluster = ~sid, data = long_diff)
-summary(mod3)
+# Run regression with clustered standard errors using fixest
+model3 <- feols(diff ~ treat, 
+                data = castle_long, 
+                cluster = ~sid)
+summary(model3)
 
-# Weighted models
 
-# OLS with weights
-mod1w <- feols(l_homicide ~ post * treat, cluster = ~sid, weights = ~popwt, data = castle)
-summary(mod1w)
+# Manual weighted 2x2 DiD calculation
+# Calculate weighted group means
+wy11 <- weighted.mean(castle$l_homicide[castle$treat == 1 & castle$post == 1], 
+                      castle$popwt[castle$treat == 1 & castle$post == 1], na.rm = TRUE)
+wy10 <- weighted.mean(castle$l_homicide[castle$treat == 1 & castle$post == 0], 
+                      castle$popwt[castle$treat == 1 & castle$post == 0], na.rm = TRUE)
+wy01 <- weighted.mean(castle$l_homicide[castle$treat == 0 & castle$post == 1], 
+                      castle$popwt[castle$treat == 0 & castle$post == 1], na.rm = TRUE)
+wy00 <- weighted.mean(castle$l_homicide[castle$treat == 0 & castle$post == 0], 
+                      castle$popwt[castle$treat == 0 & castle$post == 0], na.rm = TRUE)
 
-# TWFE with weights
-mod2w <- feols(l_homicide ~ i(year) + post * treat | sid, cluster = ~sid, weights = ~popwt, data = castle)
-summary(mod2w)
+# Add these as variables to the dataset
+castle$wy11 <- wy11
+castle$wy10 <- wy10
+castle$wy01 <- wy01
+castle$wy00 <- wy00
 
-# Weighted long difference
-long_diff_w <- castle %>%
+# Calculate weighted DiD estimator
+castle$wdid <- (wy11 - wy10) - (wy01 - wy00)
+
+# Display the weighted DiD estimate
+cat("Weighted DiD Estimate:", unique(castle$wdid), "\n")
+summary(castle$wdid)
+
+# Weighted Regression Example 1: OLS regression with interactions and population weights
+wmodel1 <- lm(l_homicide ~ post * treat, data = castle, weights = popwt)
+
+# Get clustered standard errors for weighted regression
+wclustered_se <- vcovCL(wmodel1, cluster = castle$sid)
+coeftest(wmodel1, vcov = wclustered_se)
+
+# Weighted Regression Example 2: Two-way fixed effects (state and year fixed effects)
+wmodel2 <- feols(l_homicide ~ treat:post | sid + year, 
+                 data = castle, 
+                 weights = ~popwt,
+                 cluster = ~sid)
+summary(wmodel2)
+
+# Weighted Regression Example 3: Regress "long difference" onto treatment dummy
+# Create weighted long difference dataset
+castle_wlong <- castle %>%
   select(sid, year, l_homicide, popwt, treat) %>%
-  pivot_wider(names_from = year, values_from = c(l_homicide, popwt)) %>%
-  mutate(diff = l_homicide_2006 - l_homicide_2005)
+  pivot_wider(names_from = year, 
+              values_from = c(l_homicide, popwt), 
+              names_sep = "") %>%
+  mutate(diff = l_homicide2006 - l_homicide2005)
 
-mod3w <- feols(diff ~ treat, cluster = ~sid, weights = ~popwt_2005, data = long_diff_w)
-summary(mod3w)
-mod3w <- feols(diff ~ treat, cluster = ~sid, weights = ~popwt_2005, data = long_diff_w)
-summary(mod3w)
+# Run weighted regression with clustered standard errors
+wmodel3 <- feols(diff ~ treat, 
+                 data = castle_wlong, 
+                 weights = ~popwt2005,
+                 cluster = ~sid)
+summary(wmodel3)
+
+
+

@@ -38,6 +38,7 @@ gen y00 = `r(mean)'
 gen did = (y11 - y10) - (y01 - y00)
 sum did
 
+
 * Regression Example 1: OLS regression with interactions (interactioned OLS)
 reg l_homicide post##treat, cluster(sid)
 
