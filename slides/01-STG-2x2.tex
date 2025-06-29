@@ -324,21 +324,6 @@ Pedagogical goal is to explain diff-in-diff and other panel estimators, but as a
 
 
 
-\begin{frame}{Identification vs Estimation}
-
-\begin{itemize}
-\item Very common for someone to write down:
-
-$$ Y_{it} = \alpha + \beta D_{it} + \tau_t + \sigma_s + \varepsilon_{it}$$and say that $\beta$ is their causal parameter -- it is not
-
-\item We start by distinguishing between the parameter we are attempting to identify and the manner in which we will estimate it
-\item Identification requires first stating explicitly our goal expressed using potential outcomes
-\item But often people skip this step and go directly to the  $2 \times 2$ calculation
-
-\end{itemize}
-
-\end{frame}
-
 
 
 
@@ -406,6 +391,39 @@ It's the average causal effect but only for the people exposed to some intervent
 
 \subsection{Core Diff-in-Diff Assumptions}
 
+\begin{frame}{Causal Parameters}
+
+\begin{itemize}
+\item Causal parameters have three ingredients:
+	\begin{enumerate}
+	\item Potential outcome notation and treatment effects (i.e., $\delta_i = Y^1_i - Y^0_i$)
+	\item Populations of units
+	\item Averages and weights (though there are alternatives)
+	\end{enumerate}
+\item There are oftentimes more than one causal parameter, and when you choose among them, that is called your \textbf{target parameter}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Identification vs Estimation}
+
+\begin{itemize}
+\item Very common for someone to write down:
+
+$$ Y_{it} = \alpha + \beta D_{it} + \tau_t + \sigma_s + \varepsilon_{it}$$and say that $\beta$ is their causal parameter -- it is not
+
+\item We start by distinguishing between the parameter we are attempting to identify and the manner in which we will estimate it
+\item Identification requires first stating explicitly our goal expressed using potential outcomes
+\item But often people skip this step and go directly to regressions which creates confusion and misinterpretation
+
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
 \begin{frame}{Deriving identification assumptions}
 
 \begin{itemize}
@@ -425,8 +443,8 @@ It's the average causal effect but only for the people exposed to some intervent
 \begin{frame}{DiD equation is the 2x2}
 
 \begin{itemize}
-\item The building block of diff-in-diff calculations is ``four averages and three subtractions''
-\item Needs two groups, two time periods, which is four averages
+\item The building block of diff-in-diff calculations is the $\mathbf{2 \times 2}$ 
+\item Two groups, two time periods, four averages, three subtractions ("four averages and three subtractions")
 \item Often called the $2 \times 2$ for that reason (Goodman-Bacon 2021)
 
 \begin{eqnarray*}
@@ -436,6 +454,99 @@ It's the average causal effect but only for the people exposed to some intervent
 \end{itemize}
 
 \end{frame}
+
+
+
+\begin{frame}{Why do Diff-in-Diff}
+
+\begin{itemize}
+\item Appeal of diff-in-diff has \emph{always} been its simplicity, its transparency, and its ease of conveying analysis to an audience
+	\begin{itemize}
+	\item Giovanni Mastrobuoni graduated from Princeton University in 2006 and studied with a famous labor economist named Orley Ashenfelter
+	\item Orley invented the term "difference-in-differences" used it in the 1970s to explain regressions with fixed effects to US Bureaucrats
+	\end{itemize}
+\item Diff-in-diff is four averages and three subtractions and everyone knows what those are
+$$\widehat{\textcolor{blue}{\delta}} = \bigg ( \overline{y}_k^{post(k)} - \overline{y}_k^{pre(k)} \bigg ) - \bigg ( \overline{y}_U^{post(k)} - \overline{y}_U^{pre(k)} \bigg ) $$
+\item But $\widehat{\delta}$ is just the OLS coefficient in this regression:
+$$Y_{ist} = \alpha_0 + \alpha_1 Treat_{is} + \alpha_2 Post_{t} + \textcolor{blue}{\delta} (Treat_{is} \times Post_t) + \varepsilon_{ist} $$
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Data example}
+
+\begin{itemize}
+\item Medicaid is a US policy for the poor -- provides access to healthcare to the poor -- and it's been a research question whether it has any effect on mortality
+	\begin{itemize}
+	\item Finkelstein, et al. (2012) found no effect on mortality from RCT, but it was probably underpowered to find small effects
+	\item Borgschulte and Vogler (2020) used county level publicly available mortality data and found evidence that it did
+	\item Miller, Johnson and Wherry (2022) used linked administrative data and also found it did
+	\end{itemize}
+\item Let's review the Borgschulte and Vogler (2020) approach
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Simple 2x2 DD}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.5\textheight]{./lecture_includes/simple2x2.png}
+\end{figure}
+
+
+\end{frame}
+
+\begin{frame}{Three Regressions}
+
+\begin{itemize}
+\item Three regression specifications give you those exact same numbers
+	\begin{enumerate}
+	\item Regress mortality onto treatment dummy, post dummy and interaction (no fixed effects)
+	\item Regress mortality onto interaction with county and year fixed effects (but no constant)
+	\item Regress long difference (i.e., post value minus pre) onto a treatment dummy
+	\end{enumerate}
+\item Those are all numerically identical to "four averages and three subtractions"
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.7\textheight]{./lecture_includes/regression2x2.png}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Equivalence}
+
+\begin{itemize}
+\item Please open \texttt{equivalence.do} and \texttt{equivalence.R} in ./Example-Code
+\item We will review these three "unweighted" regressions
+\item Can you figure out how to do the "weighted" regressions?
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Equivalence}
+
+\begin{itemize}
+
+\item Equivalence between calculating these 2x2s by hand or with a regression has appealing features
+\item Regressions are simple to run, and they do the averaging behind the scenes
+\item They also allow us to use statistical inference tools from OLS like clustering decisions
+\item  Bertrand, Duflo and Mullainathan (2004) show that conventional standard errors will often severely understate the standard deviation of the estimators and propose clustering standard errors at the aggregate unit level of treatment
+\end{itemize}
+
+\end{frame}
+
+
 
 
 
@@ -1057,100 +1168,6 @@ ATE_p &=& \frac{(0.5 \times 8) + (-1 \times 2)}{8 + 2} \\
 
 \end{frame}
 
-
-\section{Four Means or One Regression?}
-
-
-
-
-\begin{frame}{Why do Diff-in-Diff}
-
-\begin{itemize}
-\item Appeal of diff-in-diff has \emph{always} been its simplicity, its transparency, and its ease of conveying analysis to an audience
-	\begin{itemize}
-	\item Giovanni Mastrobuoni graduated from Princeton University in 2006 and studied with a famous labor economist named Orley Ashenfelter
-	\item Orley invented the term "difference-in-differences" used it in the 1970s to explain regressions with fixed effects to US Bureaucrats
-	\end{itemize}
-\item Diff-in-diff is four averages and three subtractions and everyone knows what those are
-$$\widehat{\textcolor{blue}{\delta}} = \bigg ( \overline{y}_k^{post(k)} - \overline{y}_k^{pre(k)} \bigg ) - \bigg ( \overline{y}_U^{post(k)} - \overline{y}_U^{pre(k)} \bigg ) $$
-\item But $\widehat{\delta}$ is just the OLS coefficient in this regression:
-$$Y_{ist} = \alpha_0 + \alpha_1 Treat_{is} + \alpha_2 Post_{t} + \textcolor{blue}{\delta} (Treat_{is} \times Post_t) + \varepsilon_{ist} $$
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Data example}
-
-\begin{itemize}
-\item Medicaid is a US policy for the poor -- provides access to healthcare to the poor -- and it's been a research question whether it has any effect on mortality
-	\begin{itemize}
-	\item Finkelstein, et al. (2012) found no effect on mortality from RCT, but it was probably underpowered to find small effects
-	\item Borgschulte and Vogler (2020) used county level publicly available mortality data and found evidence that it did
-	\item Miller, Johnson and Wherry (2022) used linked administrative data and also found it did
-	\end{itemize}
-\item Let's review the Borgschulte and Vogler (2020) approach
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Simple 2x2 DD}
-
-\begin{figure}
-    \centering
-    \includegraphics[height=0.5\textheight]{./lecture_includes/simple2x2.png}
-\end{figure}
-
-
-\end{frame}
-
-\begin{frame}{Three Regressions}
-
-\begin{itemize}
-\item Three regression specifications give you those exact same numbers
-	\begin{enumerate}
-	\item Regress mortality onto treatment dummy, post dummy and interaction (no fixed effects)
-	\item Regress mortality onto interaction with county and year fixed effects (but no constant)
-	\item Regress long difference (i.e., post value minus pre) onto a treatment dummy
-	\end{enumerate}
-\item Those are all numerically identical to "four averages and three subtractions"
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-
-\begin{figure}
-    \centering
-    \includegraphics[height=0.7\textheight]{./lecture_includes/regression2x2.png}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Equivalence}
-
-\begin{itemize}
-\item Please open \texttt{equivalence.do} and \texttt{equivalence.R} in ./Example-Code
-\item We will review these three "unweighted" regressions
-\item Can you figure out how to do the "weighted" regressions?
-
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Equivalence}
-
-\begin{itemize}
-
-\item Equivalence between calculating these 2x2s by hand or with a regression has appealing features
-\item Regressions are simple to run, and they do the averaging behind the scenes
-\item They also allow us to use statistical inference tools from OLS like clustering decisions
-\item  Bertrand, Duflo and Mullainathan (2004) show that conventional standard errors will often severely understate the standard deviation of the estimators and propose clustering standard errors at the aggregate unit level of treatment
-\end{itemize}
-
-\end{frame}
 
 
 
