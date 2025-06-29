@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{Violations of Parallel Trends}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Event Study Plots}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Other Falsifications}{24}{0}{1}
+\beamer@subsectionintoc {1}{3}{Triple Differences}{30}{0}{1}
+\beamer@sectionintoc {2}{Covariates}{42}{0}{2}
+\beamer@subsectionintoc {2}{1}{Compositional Change}{43}{0}{2}
+\beamer@subsectionintoc {2}{2}{Conditional Parallel Trends}{54}{0}{2}
+\beamer@subsectionintoc {2}{3}{Four Estimators for Covariates}{64}{0}{2}
