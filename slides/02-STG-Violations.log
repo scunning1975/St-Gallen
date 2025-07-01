@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.14)  29 JUN 2025 18:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.14)  1 JUL 2025 09:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1847,20 +1847,20 @@ Overfull \hbox (17.82248pt too wide) in paragraph at lines 265--265
 
 ] [24
 
+] [25
+
 ]
 File: ./lecture_includes/placebo_medicaid.png Graphic file (type png)
 <use ./lecture_includes/placebo_medicaid.png>
 Package pdftex.def Info: ./lecture_includes/placebo_medicaid.png  used on input
- line 314.
+ line 334.
 (pdftex.def)             Requested size: 362.8197pt x 145.46915pt.
 
-Overfull \hbox (28.62434pt too wide) in paragraph at lines 314--314
+Overfull \hbox (28.62434pt too wide) in paragraph at lines 334--334
  [] 
  []
 
-[25
-
-] [26
+[26
 
 ] [27
 
@@ -1870,125 +1870,125 @@ Overfull \hbox (28.62434pt too wide) in paragraph at lines 314--314
 
 ] [30
 
+] [31
+
 ]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/it' aliased to
-(Font)              `OT1/Roboto-LF/light/it' on input line 412.
+(Font)              `OT1/Roboto-LF/light/it' on input line 432.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/it' will be
-(Font)              scaled to size 10.0pt on input line 412.
+(Font)              scaled to size 10.0pt on input line 432.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 412.
+(Font)              `OT1/Roboto-LF/bold/n' on input line 432.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 8.0pt on input line 412.
- [31
-
-] [32
+(Font)              scaled to size 8.0pt on input line 432.
+ [32
 
 ] [33
 
+] [34
+
 ]
-<./lecture_includes/gruber_ddd_3.pdf, id=325, 205.9056pt x 224.68094pt>
+<./lecture_includes/gruber_ddd_3.pdf, id=332, 205.9056pt x 224.68094pt>
 File: ./lecture_includes/gruber_ddd_3.pdf Graphic file (type pdf)
 <use ./lecture_includes/gruber_ddd_3.pdf>
 Package pdftex.def Info: ./lecture_includes/gruber_ddd_3.pdf  used on input lin
-e 467.
+e 487.
 (pdftex.def)             Requested size: 205.90509pt x 224.68039pt.
- [34
+ [35
 
- <./lecture_includes/gruber_ddd_3.pdf>] [35
+ <./lecture_includes/gruber_ddd_3.pdf>] [36
 
 ]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
-(Font)              `OT1/Roboto-LF/bold/n' on input line 532.
+(Font)              `OT1/Roboto-LF/bold/n' on input line 552.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 6.0pt on input line 532.
- [36
+(Font)              scaled to size 6.0pt on input line 552.
+ [37
 
-] [37
+] [38
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+Roboto-LF on input 
-line 561.
+line 581.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/roboto/TS1Roboto-LF.fd
 File: TS1Roboto-LF.fd 2019/12/11 (autoinst) Font definitions for TS1/Roboto-LF.
 
 )
 LaTeX Font Info:    Font shape `TS1/Roboto-LF/l/n' aliased to
-(Font)              `TS1/Roboto-LF/light/n' on input line 561.
+(Font)              `TS1/Roboto-LF/light/n' on input line 581.
 LaTeX Font Info:    Font shape `TS1/Roboto-LF/light/n' will be
-(Font)              scaled to size 10.95pt on input line 561.
+(Font)              scaled to size 10.95pt on input line 581.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Roboto-LF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [38
+ [39
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/roboto/rbto_ocbbsb.enc}]
-<./lecture_includes/ddd_simulation.png, id=397, 1266.23062pt x 919.435pt>
+<./lecture_includes/ddd_simulation.png, id=404, 1266.23062pt x 919.435pt>
 File: ./lecture_includes/ddd_simulation.png Graphic file (type png)
 <use ./lecture_includes/ddd_simulation.png>
 Package pdftex.def Info: ./lecture_includes/ddd_simulation.png  used on input l
-ine 571.
+ine 591.
 (pdftex.def)             Requested size: 316.55688pt x 229.85818pt.
- [39
+ [40
 
  <./lecture_includes/ddd_simulation.png>]
-<./lecture_includes/olden_moen_2022_ddd.png, id=405, 682.04813pt x 1040.88875pt
+<./lecture_includes/olden_moen_2022_ddd.png, id=412, 682.04813pt x 1040.88875pt
 >
 File: ./lecture_includes/olden_moen_2022_ddd.png Graphic file (type png)
 <use ./lecture_includes/olden_moen_2022_ddd.png>
 Package pdftex.def Info: ./lecture_includes/olden_moen_2022_ddd.png  used on in
-put line 579.
+put line 599.
 (pdftex.def)             Requested size: 170.51161pt x 260.22154pt.
 
-Overfull \vbox (30.41805pt too high) detected at line 579
+Overfull \vbox (30.41805pt too high) detected at line 599
  []
 
-[40
+[41
 
- <./lecture_includes/olden_moen_2022_ddd.png>] [41
+ <./lecture_includes/olden_moen_2022_ddd.png>] [42
 
-] (./02-STG-Violations.toc) [42
+] (./02-STG-Violations.toc) [43
 
-] [43
+] [44
 
 ]
-<./lecture_includes/hong_napster.png, id=438, 676.5275pt x 283.55937pt>
+<./lecture_includes/hong_napster.png, id=445, 676.5275pt x 283.55937pt>
 File: ./lecture_includes/hong_napster.png Graphic file (type png)
 <use ./lecture_includes/hong_napster.png>
 Package pdftex.def Info: ./lecture_includes/hong_napster.png  used on input lin
-e 617.
+e 637.
 (pdftex.def)             Requested size: 338.26291pt x 141.77933pt.
 
-Overfull \hbox (4.06755pt too wide) in paragraph at lines 617--617
+Overfull \hbox (4.06755pt too wide) in paragraph at lines 637--637
  [] 
  []
 
-[44
+[45
 
  <./lecture_includes/hong_napster.png>]
-<./lecture_includes/Hong_1.pdf, id=446, 301.15051pt x 200.70114pt>
+<./lecture_includes/Hong_1.pdf, id=454, 301.15051pt x 200.70114pt>
 File: ./lecture_includes/Hong_1.pdf Graphic file (type pdf)
 <use ./lecture_includes/Hong_1.pdf>
-Package pdftex.def Info: ./lecture_includes/Hong_1.pdf  used on input line 625.
+Package pdftex.def Info: ./lecture_includes/Hong_1.pdf  used on input line 645.
 
 (pdftex.def)             Requested size: 301.14978pt x 200.70064pt.
- [45
+ [46
 
- <./lecture_includes/Hong_1.pdf>] [46
+ <./lecture_includes/Hong_1.pdf>] [47
 
 ]
-<./lecture_includes/hong_table.png, id=542, 670.00313pt x 225.84375pt>
+<./lecture_includes/hong_table.png, id=549, 670.00313pt x 225.84375pt>
 File: ./lecture_includes/hong_table.png Graphic file (type png)
 <use ./lecture_includes/hong_table.png>
 Package pdftex.def Info: ./lecture_includes/hong_table.png  used on input line 
-653.
+673.
 (pdftex.def)             Requested size: 335.00075pt x 112.92159pt.
- [47
+ [48
 
- <./lecture_includes/hong_table.png>] [48
-
-] [49
+ <./lecture_includes/hong_table.png>] [49
 
 ] [50
 
@@ -1996,26 +1996,26 @@ Package pdftex.def Info: ./lecture_includes/hong_table.png  used on input line
 
 ] [52
 
-]
-[53
+] [53
 
-] [54
+]
+[54
+
+] [55
 
 ]
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/it' aliased to
-(Font)              `OT1/Roboto-LF/light/it' on input line 779.
+(Font)              `OT1/Roboto-LF/light/it' on input line 799.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/it' will be
-(Font)              scaled to size 14.4pt on input line 779.
- [55
+(Font)              scaled to size 14.4pt on input line 799.
+ [56
 
 ]
-Overfull \hbox (9.76501pt too wide) detected at line 789
+Overfull \hbox (9.76501pt too wide) detected at line 809
 []
  []
 
-[56
-
-] [57
+[57
 
 ] [58
 
@@ -2023,21 +2023,21 @@ Overfull \hbox (9.76501pt too wide) detected at line 789
 
 ] [60
 
+] [61
+
 ]
-<./lecture_includes/step6_imbalance.png, id=631, 792.9625pt x 527.47063pt>
+<./lecture_includes/step6_imbalance.png, id=638, 792.9625pt x 527.47063pt>
 File: ./lecture_includes/step6_imbalance.png Graphic file (type png)
 <use ./lecture_includes/step6_imbalance.png>
 Package pdftex.def Info: ./lecture_includes/step6_imbalance.png  used on input 
-line 865.
+line 885.
 (pdftex.def)             Requested size: 323.68896pt x 215.31812pt.
- [61
+ [62
 
- <./lecture_includes/step6_imbalance.png>] [62
+ <./lecture_includes/step6_imbalance.png>] [63
 
 ]
-[63
-
-] [64
+[64
 
 ] [65
 
@@ -2057,21 +2057,20 @@ line 865.
 
 ] [73
 
+] [74
+
+] [75
+
 ]
-<./lecture_includes/common_support_abadie.jpg, id=713, 1555.8125pt x 1401.235pt
->
-File: ./lecture_includes/common_support_abadie.jpg Graphic file (type jpg)
-<use ./lecture_includes/common_support_abadie.jpg>
-Package pdftex.def Info: ./lecture_includes/common_support_abadie.jpg  used on 
-input line 1047.
-(pdftex.def)             Requested size: 77.79518pt x 70.06584pt.
- [74
+<./lecture_includes/baker_pscore.png, id=726, 755.32187pt x 382.42876pt>
+File: ./lecture_includes/baker_pscore.png Graphic file (type png)
+<use ./lecture_includes/baker_pscore.png>
+Package pdftex.def Info: ./lecture_includes/baker_pscore.png  used on input lin
+e 1076.
+(pdftex.def)             Requested size: 37.7683pt x 19.12254pt.
+ [76
 
- <./lecture_includes/common_support_abadie.jpg>] [75
-
-] [76
-
-] [77
+ <./lecture_includes/baker_pscore.png>] [77
 
 ] [78
 
@@ -2085,14 +2084,14 @@ input line 1047.
 
 ] [83
 
-]
-[84
+] [84
 
 ] [85
 
 ] [86
 
-] [87
+]
+[87
 
 ] [88
 
@@ -2110,31 +2109,39 @@ input line 1047.
 
 ] [95
 
-]
-Overfull \vbox (2.4227pt too high) detected at line 1413
- []
-
-[96
+] [96
 
 ] [97
 
 ] [98
+
+] [99
+
+]
+Overfull \vbox (2.4227pt too high) detected at line 1473
+ []
+
+[100
+
+] [101
+
+] [102
 
 ]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [99
+ [103
 
 ]
-<./lecture_includes/covariates.jpg, id=877, 2635.8475pt x 1756.5625pt>
+<./lecture_includes/covariates.jpg, id=905, 2635.8475pt x 1756.5625pt>
 File: ./lecture_includes/covariates.jpg Graphic file (type jpg)
 <use ./lecture_includes/covariates.jpg>
 Package pdftex.def Info: ./lecture_includes/covariates.jpg  used on input line 
-1465.
+1525.
 (pdftex.def)             Requested size: 200.51924pt x 133.6127pt.
- [100
+ [104
 
  <./lecture_includes/covariates.jpg>]
 \tf@nav=\write6
@@ -2152,14 +2159,14 @@ Package pdftex.def Info: ./lecture_includes/covariates.jpg  used on input line
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `02-STG-Violations.out' has not changed.
-(rerunfilecheck)             Checksum: 4C6D21771F841477266DEF1281AC4A3E;1327.
+(rerunfilecheck)             Checksum: 79AEA79778A5EB4AD536C608B5608C59;1327.
  ) 
 Here is how much of TeX's memory you used:
- 43910 strings out of 476025
- 939062 string characters out of 5790017
+ 43934 strings out of 476025
+ 939339 string characters out of 5790017
  1874388 words of memory out of 5000000
- 63097 multiletter control sequences out of 15000+600000
- 547540 words of font info for 151 fonts, out of 8000000 for 9000
+ 63105 multiletter control sequences out of 15000+600000
+ 548363 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,1014b,707s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/google/roboto/Roboto-Bold.pfb
@@ -2169,26 +2176,28 @@ ic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
 0.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
 .pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.p
 fb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
-></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></u
-sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/lo
-cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local
-/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
-ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
-2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/202
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2023/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2023/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on 02-STG-Violations.pdf (100 pages, 4201755 bytes).
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr
+/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
+/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
+23/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/202
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2023/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2023/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on 02-STG-Violations.pdf (104 pages, 4193771 bytes).
 PDF statistics:
- 1009 PDF objects out of 1200 (max. 8388607)
- 780 compressed objects within 8 object streams
- 209 named destinations out of 1000 (max. 500000)
+ 1051 PDF objects out of 1200 (max. 8388607)
+ 812 compressed objects within 9 object streams
+ 217 named destinations out of 1000 (max. 500000)
  41803 words of extra memory for PDF output out of 42996 (max. 10000000)
 

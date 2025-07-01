@@ -298,11 +298,31 @@
 	\begin{itemize}
 	\item Prosecutor based on police produces fingerprints, eyewitnesses and imprints in mud
 	\end{itemize}
-\item Event studies are evidence of pre-trends only, but they are consistent with various forms (but not all) forms of selection
-\item Falsifications are post-treatment heuristics based on logic and counter-evidence (Popperian reasoning)
+\item Event studies are evidence of pre-trends only, but they do not protect against bias caused by policies or events that happen simultaneous to the treatment
+	\begin{itemize}
+	\item When policies happen at the same as the treatment which affect $Y^0$, then parallel trends is violated by definition
+	\item But maybe there is a way to test for this using falsifications
+	\end{itemize}
+\item Falsifications are designed to rule out the possibility that the estimated treatment effects were caused by something else -- but you need some ideas of what those might be
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Two types of falsifications}
+
+\begin{enumerate}
+\item Same outcome as your main model, but using an untreated group
+	\begin{itemize}
+	\item Run your main model on a group that shouldn’t respond to treatment.
+	\item If your estimate is still large, something else might be driving the results.
+	\end{itemize}
+\item Same treatment group with an unlikely outcome
+	\begin{itemize}
+	\item Think of a variable your treatment shouldn’t plausibly affect.
+	\item If you detect an effect anyway, your design may be picking up noise or bias.
+	\end{itemize}
+\end{enumerate}
+
+\end{frame}
 
 
 \begin{frame}{Falsification 1: same outcome, but untreated groups}
@@ -313,21 +333,21 @@
 
 \end{frame}
 
-\begin{frame}{Falsification 2: different outcomes, same treatment group}
-	\begin{itemize}
-	\item Good falsifications make logical sense:
-		\begin{itemize}
-		\item They are a similar enough group (near elderly versus elderly)
-		\item They are an outcome that would be susceptible to some omitted variable you're worried about
-		\end{itemize}
-	\item Two examples
-		\begin{itemize}
-		\item Cheng and Hoekstra (2013) examine the effect of a gun laws on non-gun related offenses like grand theft auto and find no evidence of an effect
-		\item Cunningham, DeAngelo and Tripp (2024) examine effect of a sex worker platform on irrelevant crime categories
-		\end{itemize}
-	\end{itemize}
-\end{frame}
+\begin{frame}{Falsification 2: same treatment group, different outcome}
 
+\begin{itemize}
+    \item Ask: what else might explain your estimated effect?
+    \item Then test whether \emph{that} explanation affects other outcomes your treatment shouldn't.
+    \item Example: A policy restricts pseudoephedrine, a key ingredient in meth production.
+    \begin{itemize}
+        \item Concern: maybe meth production falls not because of the policy, but due to broader drug enforcement efforts.
+        \item Falsification: test if violent crimes also fall—if they do, policing may be the real driver.
+    \end{itemize}
+    \item But be careful: some outcomes (like heroin use) might plausibly change if they’re complements or substitutes.
+    \item Goal: use logic, not labels—your falsification should test a story that could undermine your main claim.
+\end{itemize}
+
+\end{frame}
 
 
 \begin{frame}{Rational addiction as a placebo critique}
@@ -1038,13 +1058,41 @@ But we have to have all three for it to work
 
 \end{frame}
 
-\begin{frame}{Visualizing propensity score to get common support}
+\begin{frame}{Checking for overlap}
+
+\begin{enumerate}
+\item Estimate the propensity scores yourself and then plot with histograms to check for overlap
+\item Check that the control group propensity scores are not above 0.995 and if so trim them
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Checking propensity scores for overlap}
 
 	\begin{figure}
-	\includegraphics[scale=0.05]{./lecture_includes/common_support_abadie.jpg}
+	\includegraphics[scale=0.05]{./lecture_includes/baker_pscore.png}
 	\end{figure}
 
 \end{frame}
+
+\begin{frame}{Checking for large propensity scores}
+
+\begin{itemize}
+\item Abadie's estimator uses the \emph{inverse probability weight} $$\frac{-p(x)}{1-p(x)}$$
+\item Consider these examples
+	\begin{enumerate}
+	\item Control group has $p(x)=0.75$, \emph{IPW} is $\frac{-0.75}{0.25}=-3$. 
+	\item Control group has $p(x)=0.25$, \emph{IPW} is $\frac{-0.25}{0.75}=-0.33$
+	\end{enumerate}
+\item But what if the control group propensity score is almost 1?
+	\begin{enumerate}
+	\item Control group has $p(x)=0.998$, \emph{IPW} = $\frac{-0.998}{0.002}=-499$
+	\end{enumerate}
+\item IPW "outliers" are with respect to control group "extremely high propensity scores" -- causes the weights to explode, so trim them
+\end{itemize}
+
+\end{frame}
+
 
 \begin{frame}{Definition and estimation}
 
@@ -1098,16 +1146,13 @@ The reweighting with the propensity only happens to the comparison group's first
 
 
 
-\begin{frame}{Outcome regression and double robust}
+\begin{frame}{Outcome regression }
 
 \begin{itemize}
-\item DR models control for covariates twice -- once using the propensity score, once using outcomes adjusted by regression -- and are unbiased so long as:
-	\begin{itemize}
-	\item The regression specification for the outcome is correctly specified
-	\item The propensity score specification is correctly specified
-	\end{itemize}
-\item Sant'Anna and Zhao (2020) incorporated DR into DiD by combining inverse probability weighting and outcome regression into a single DiD model
-\item It's in the engine of Callaway and Sant'Anna (2020) that we discuss later so it merits close study
+\item Outcome regression (OR) models are explicit \emph{imputation} estimators
+\item If conditional parallel trends holds, then whatever the relationship is between $X$ and $Y$ for the control group is the same for treatment group
+\item You use this idea to fit a model from the control group then impute for the treatment group
+\item Core model is Heckman, Ichimura and Todd (1997), RESTUD
 \end{itemize}
 
 \end{frame}
@@ -1115,23 +1160,10 @@ The reweighting with the propensity only happens to the comparison group's first
 
 
 
-\begin{frame}{Identification assumptions I: Data}
 
-Assumption 1: Assume panel data or repeated cross-sectional data
+\begin{frame}{Identification assumptions I: Conditional parallel trends}
 
-\bigskip
-
-Handling repeated cross-sectional data is possible but assumes stationarity which is a kind of stability assumption, but I'll use panel representation.
-
-\bigskip
-
-Cross-sections will be potentially violated with changing sample compositions (e.g., the Napster example).
-
-\end{frame}
-
-\begin{frame}{Identification assumptions II: Modification to parallel trends}
-
-Assumption 2: Conditional parallel trends
+Assumption 1: Conditional parallel trends
 
 \bigskip
 
@@ -1143,9 +1175,9 @@ E[Y_1^0 - Y_0^0 | X, D=1] = E[Y^0_1 - Y^0_0 | X, D=0]
 
 \end{frame}
 
-\begin{frame}{Identification assumptions III: Common support}
+\begin{frame}{Identification assumptions II: Common support}
 
-Assumption 3: Common support
+Assumption 2: Common support
 
 \bigskip
 
@@ -1157,15 +1189,16 @@ Heckman, et al doesn't use the propensity score so we need a more general expres
 
 \end{frame}
 
-\begin{frame}{Estimating DD with Assumptions 1-3}
+\begin{frame}{Identification assumptions III: Correct model}
 
-\begin{itemize}
-\item Assumptions 1-3 gives us a couple of options of estimating the DiD
-\item We can either use the outcome regression (OR) approach of Heckman, et al 1997 (will require correct model too)
-\item Or we can use the inverse probability weighting (IPW) approach of Abadie (2005) (will require correct model too)
-\end{itemize}
+Assumption 3: Correct Outcome Regression Specification
+
+\bigskip
+
+You are going to fit a regression model which means the functional form must be correct as this is going to be used to impute outcomes in a subsequent stage
 
 \end{frame}
+
 
 
 
@@ -1200,6 +1233,17 @@ where $\overline{Y}$ is the sample average of $Y$ among units in the treatment g
 
 \end{frame}
 
+\begin{frame}{Estimating DD with Assumptions 1-3}
+
+\begin{itemize}
+\item Assumptions 1-3 gives us a couple of options of estimating the DiD
+\item We can either use the outcome regression (OR) approach of Heckman, et al 1997 (will require correct model too)
+\item Or we can use the inverse probability weighting (IPW) approach of Abadie (2005) (will require correct model too)
+\end{itemize}
+
+\end{frame}
+
+
 \begin{frame}{Inverse probability weighting}
 
 This is the Abadie (2005) approach where we use weighting
@@ -1222,6 +1266,22 @@ where $\widehat{p}(X)$ is an estimator for the true propensity score. Reduces th
 \end{itemize}
 
 \end{frame}
+
+\begin{frame}{Outcome regression and double robust}
+
+\begin{itemize}
+\item DR models control for covariates twice -- once using the propensity score, once using outcomes adjusted by regression -- and are unbiased so long as:
+	\begin{itemize}
+	\item The regression specification for the outcome is correctly specified
+	\item The propensity score specification is correctly specified
+	\end{itemize}
+\item Sant'Anna and Zhao (2020) incorporated DR into DiD by combining inverse probability weighting and outcome regression into a single DiD model
+\item It's in the engine of Callaway and Sant'Anna (2020) that we discuss later so it merits close study
+\end{itemize}
+
+\end{frame}
+
+
 
 \begin{frame}{Double Robust DR}
 
