@@ -1026,22 +1026,12 @@ If I can, that's common support; if I cannot that's off support
 
 \item Propensity score theorem (Rosenbaum and Rubin 1983) showed that if you need $X$ to satisfy some assumption, the propensity score will satisfy too
 \item Propensity scores essentially transform your large dimensional problem into a single scalar called the propensity score, which is the conditional probability of treatment (conditional on $X$)
-\item But we need to estimate the propensity score because we don't usually know it (only an experimentalist ``knows'' the true propensity score)
+\item But we need to estimate the propensity score because we don't usually know it
 
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Common support and the propensity score}
-
-\begin{itemize}
-\item Exact matches mean you have people who are identical on covariate values in both treatment and control
-\item Common support and the propensity score means you have people nearly identical on their probability of treatment
-\item I am 47yo white male with a PhD with a propensity score of 0.75, but you are an Asian female 27yo without a PhD and have a propensity score of 0.75
-\item Same idea, but for this to work, we need to have ``matches'' like that (just on the propensity score)
-\end{itemize}
-
-\end{frame}
 
 
 \begin{frame}{How do these work together?}
@@ -1070,7 +1060,7 @@ But we have to have all three for it to work
 \begin{frame}{Checking propensity scores for overlap}
 
 	\begin{figure}
-	\includegraphics[scale=0.05]{./lecture_includes/baker_pscore.png}
+	\includegraphics[scale=0.45]{./lecture_includes/baker_pscore.png}
 	\end{figure}
 
 \end{frame}

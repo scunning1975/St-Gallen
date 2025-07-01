@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.14)  1 JUL 2025 09:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.14)  1 JUL 2025 10:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2059,18 +2059,23 @@ line 885.
 
 ] [74
 
-] [75
-
 ]
-<./lecture_includes/baker_pscore.png, id=726, 755.32187pt x 382.42876pt>
+<./lecture_includes/baker_pscore.png, id=720, 755.32187pt x 382.42876pt>
 File: ./lecture_includes/baker_pscore.png Graphic file (type png)
 <use ./lecture_includes/baker_pscore.png>
 Package pdftex.def Info: ./lecture_includes/baker_pscore.png  used on input lin
-e 1076.
-(pdftex.def)             Requested size: 37.7683pt x 19.12254pt.
- [76
+e 1066.
+(pdftex.def)             Requested size: 339.8917pt x 172.09134pt.
 
- <./lecture_includes/baker_pscore.png>] [77
+Overfull \hbox (5.69633pt too wide) in paragraph at lines 1066--1066
+ [] 
+ []
+
+[75
+
+ <./lecture_includes/baker_pscore.png>] [76
+
+] [77
 
 ] [78
 
@@ -2080,7 +2085,8 @@ e 1076.
 
 ] [81
 
-] [82
+]
+[82
 
 ] [83
 
@@ -2090,8 +2096,7 @@ e 1076.
 
 ] [86
 
-]
-[87
+] [87
 
 ] [88
 
@@ -2111,37 +2116,36 @@ e 1076.
 
 ] [96
 
-] [97
+]
+[97
 
 ] [98
 
-] [99
-
 ]
-Overfull \vbox (2.4227pt too high) detected at line 1473
+Overfull \vbox (2.4227pt too high) detected at line 1463
  []
 
-[100
+[99
+
+] [100
 
 ] [101
-
-] [102
 
 ]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [103
+ [102
 
 ]
-<./lecture_includes/covariates.jpg, id=905, 2635.8475pt x 1756.5625pt>
+<./lecture_includes/covariates.jpg, id=898, 2635.8475pt x 1756.5625pt>
 File: ./lecture_includes/covariates.jpg Graphic file (type jpg)
 <use ./lecture_includes/covariates.jpg>
 Package pdftex.def Info: ./lecture_includes/covariates.jpg  used on input line 
-1525.
+1515.
 (pdftex.def)             Requested size: 200.51924pt x 133.6127pt.
- [104
+ [103
 
  <./lecture_includes/covariates.jpg>]
 \tf@nav=\write6
@@ -2153,17 +2157,20 @@ Package pdftex.def Info: ./lecture_includes/covariates.jpg  used on input line
 \tf@snm=\write8
 \openout8 = `02-STG-Violations.snm'.
 
-
+ [104]
 (./02-STG-Violations.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Temporary extra page added at the end. Rerun to get it removed.
 
 Package rerunfilecheck Info: File `02-STG-Violations.out' has not changed.
 (rerunfilecheck)             Checksum: 79AEA79778A5EB4AD536C608B5608C59;1327.
  ) 
 Here is how much of TeX's memory you used:
- 43934 strings out of 476025
- 939339 string characters out of 5790017
+ 43932 strings out of 476025
+ 939318 string characters out of 5790017
  1874388 words of memory out of 5000000
  63105 multiletter control sequences out of 15000+600000
  548363 words of font info for 155 fonts, out of 8000000 for 9000
@@ -2194,10 +2201,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf
 ist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2023/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2023/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on 02-STG-Violations.pdf (104 pages, 4193771 bytes).
+Output written on 02-STG-Violations.pdf (104 pages, 4193617 bytes).
 PDF statistics:
- 1051 PDF objects out of 1200 (max. 8388607)
- 812 compressed objects within 9 object streams
- 217 named destinations out of 1000 (max. 500000)
+ 1044 PDF objects out of 1200 (max. 8388607)
+ 805 compressed objects within 9 object streams
+ 215 named destinations out of 1000 (max. 500000)
  41803 words of extra memory for PDF output out of 42996 (max. 10000000)
 
