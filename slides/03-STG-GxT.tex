@@ -624,153 +624,6 @@ TWFE is no longer negative, interestingly, once we eliminate the last group (giv
 \end{frame}
 
 
-\subsection{Calculating event study coefficients with CS}
-
-
-\begin{frame}{What did regressions do?}
-
-\begin{itemize}
-
-\item In regressions, when you estimate leads and lags, you would drop one year dummy variable
-\item By dropping one year dummy variable, all coefficients were "long difference" calculations relative to that baseline -- both the $ATT(g,t)$ but also the event study pre-treatment coefficients
-\item Which means every event study plot you've ever seen with TWFE always was interpreted relative to a universal baseline (usually $t-1$)
-\item Some of the new estimators will allow for a different calculation, and this has created inconsistent estimators across new papers, which are relevant for checking for pre-trends
-
-\end{itemize}
-
-\end{frame}
-
-
-
-
-\begin{frame}{Event study lead calculation}
-
-\begin{itemize}
-
-\item In CS and dCDH (covered later), there are two ways to calculate the pre-treatment coefficients once you have obtained the ATT(g,t) parameter estimates:
-	\begin{enumerate}
-	\item \textbf{Long difference}. Uses a "universal baseline" with a fixed baseline at \( t-1 \).
-	
-	\begin{eqnarray*}
-	 \widehat{\delta}_{t-3} = \left( E[Y|D=1, t-3] - E[Y|D=1, t-1] \right) \\
-	 - \left( E[Y|D=0, t-3] - E[Y|D=0, t-1] \right)
-	 \end{eqnarray*}
-
-
-	\item \textbf{Short gap}. Uses a "rolling" method in which a new baseline is used for each 2x2 comparison.
-	
-	\begin{eqnarray*}
-	 \widehat{\delta}_{t-3} = \left( E[Y|D=1, t-3] - E[Y|D=1, t-2] \right) \\
-	 - \left( E[Y|D=0, t-3] - E[Y|D=0, t-2] \right)
-	 \end{eqnarray*}
-	 
-	 \end{enumerate}
-	 
- \item Both are diff-in-diff $2 \times 2$, but pre-trends can be zero in one, but not the other
-	 
-\end{itemize}
-
-\end{frame}
-
-
-
-
-
-\begin{frame}{What is the event study for?}
-
-\begin{itemize}
-
-\item The purpose of the event study is as a \emph{falsification}, not as a proof of the parallel trends
-\item Falsifications should be the \emph{same} model used for estimation but applied to something that it cannot cause -- "same group, different outcome"
-\item In this case, future treatments under no anticipation cannot affect the past
-\item Since the estimation of post-treatment ATT use $t-1$ for "pre" period, the falsifications in the event studies should too 
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Detecting it in papers}
-
-\begin{itemize}
-
-\item Very easy to spot which method someone used 
-\item Long differences \emph{never} have a coefficient at baseline, because long differences uses baseline as the comparison \emph{always}
-\item Short gaps will \emph{always} have a coefficient at baseline
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Detecting it in papers}
-
-\begin{itemize}
-
-\item Interestingly, long differences and short gaps have the same information -- you can easily convert one into the other -- but one will show trends and the other won't.
-\item So which one is right?  
-\item Remember -- parallel trends is a long difference, and all treatment effect calculations i are long differences, even in CS, so in my opinion so should the event study coefficients
-\item Plus remember -- because TWFE uses long differences, which therefore is what we have come to expect 
-\item Subtle switching out of visualizing pre-trends from our expectation
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Roth simulation}
-
-\begin{itemize}
-\item Let's look at a simulation by Jon Roth (2024) 
-\item He generated the data with rising pre-trends 
-\item He then estimated with TWFE (long difference), CS (short gaps), dCDH (short gaps) and BJS (Kyle can discuss this tomorrow)
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Short Gaps and Long Differences}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./lecture_includes/shortgap}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Software Syntax}
-
-\begin{itemize}
-
-\item Stata's \texttt{csdid} has default syntax where if you don't indicate which way to do it, it only does it using the short gap method
-\item And in the Stata user command from Stata 18, you actually \textbf{cannot} do short differences 
-\item You have to select \texttt{long2} in \texttt{csdid} and the universal baseline in R's \texttt{did} but if you want short gaps, you do not specify anything
-\item So what is going on is that since it's not documented well, \texttt{csdid} is very population, and default is short gaps, people are using short gaps and probably don't know, and don't explain it in the papers
-\item Here is an NBER WP and AER 2022 that are very clearly \emph{not} using long differences
-\end{itemize}
-
-\end{frame}
-
-
-
-
-\begin{frame}
-
-\begin{figure}
-    \centering
-    \includegraphics[height=0.6\textheight]{./lecture_includes/magic_johnson_eventstudy}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}
-
-\begin{figure}
-    \centering
-    \includegraphics[height=0.6\textheight]{./lecture_includes/facebook_3.png}
-\end{figure}
-
-\end{frame}
-
-
-
 
 
 \section{Checklists and My Online Dating Project}
@@ -800,11 +653,11 @@ TWFE is no longer negative, interestingly, once we eliminate the last group (giv
 \begin{frame}{Power to the Platform}
 
 \begin{itemize}
-\item I'm going to now walk you through a simple checklist I have in my new book
-\item Got this from Roth (2022), Pedro Sant'Anna informal conversations, principles from Rubin (2008) and many of Guido Imbens' survey articles
+\item I'm going to now walk you through a simple checklist that I'll list out more carefully at the end
+\item Ideas for it are from Roth (2022), Pedro Sant'Anna informal conversations, Rubin (2008) and many of Guido Imbens' survey articles
 \item We ran into a lot of problems by following this checklist, and a lot of heartbreak followed by excitement
 \item It's a study of online dating's effect on the American family, but I'll just focus on birth rates
-\item We have a great title -- Power to the Platform -- as a homage to "Power to the Pill" by Goldin and Katz and "More Power to the Pill" by Bailey
+\item Working title is "Power to the Platform"  as an homage to "Power to the Pill" by Goldin and Katz and "More Power to the Pill" by Bailey
 \end{itemize}
 
 \end{frame}
@@ -962,6 +815,16 @@ TWFE is no longer negative, interestingly, once we eliminate the last group (giv
 
 \end{frame}
 
+\begin{frame}{Target parameter}
+
+\begin{itemize}
+\item Our data will be county-level panel data from 1995 to 2007
+\item And since the dataset is counties, estimated average treatment effects will be averages over treated counties -- in other words "average county" not "average woman"
+\item Should we or should we not weight by county population and what even is the difference?
+\end{itemize}
+
+\end{frame}
+
 \begin{frame}{Recovery of Birth Rates (National vs. County)}
     \centering
     \begin{columns}
@@ -975,14 +838,23 @@ TWFE is no longer negative, interestingly, once we eliminate the last group (giv
         \textbf{Average County Birth Rates}
         \includegraphics[width=\linewidth,height=0.6\textheight,keepaspectratio]{./lecture_includes/county_br.png}
     \end{columns}
+    
+    \begin{itemize}
+    \item Weighting by population (\textbf{left}) will also weight the parallel trends assumption by population 
+    \item Is not mathematically necessary that you parallel trends is guaranteed for both
+    \item We chose average county (\textcolor{red}{right}) as we are focused on dating markets but there was not clear reason to favor one over the other
+    \end{itemize}
+    
 \end{frame}
+
+
 
 
 \begin{frame}
 
 \begin{figure}
     \centering
-    \includegraphics[height=0.6\textheight]{./lecture_includes/python_births.png}
+    \includegraphics[height=0.6\textheight]{./lecture_includes/birth_rates_digital_timeline.png}
 \end{figure}
 
 \end{frame}
@@ -991,29 +863,37 @@ TWFE is no longer negative, interestingly, once we eliminate the last group (giv
 
 
 
-\begin{frame}[shrink=20]{Number of counties by treatment cohorts}
+\begin{frame}[shrink=20]{Craigslist Personals Expansion and Sample Shares}
 \begin{table}[htbp]\centering
-\caption{Number of counties by year Craigslist personals appeared}\label{tab:countybycohort}
-\begin{tabular}{lc}
+\footnotesize
+\caption{Craigslist Personals Expansion and Sample Shares}
+\label{tab:table1}
+\begin{threeparttable}
+\begin{tabular}{lcc}
 \toprule
-\textbf{Treatment Cohort} & \textbf{Number of Counties Treated} \\
+\textbf{Craigslist Timing Group} & \textbf{Counties} & \textbf{Share of Treated Counties} \\
 \midrule
-Never treated&       1,779\\
-2000 cohort &           9\\
-2001 cohort &           5\\
-2002 cohort &          12\\
-2003 cohort &          36\\
-2004 cohort &          58\\
-2005 cohort &          69\\
-2006 cohort &         341\\
-2007 cohort &          65\\
-2008 cohort &          66\\
-2009 cohort &         215\\
-2010 cohort &           1\\
+2000 cohort & 9 & 0.02 \\
+2001 cohort & 5 & 0.01 \\
+2002 cohort & 12 & 0.02 \\
+2003 cohort & 36 & 0.06 \\
+2004 cohort & 58 & 0.10 \\
+2005 cohort & 69 & 0.12 \\
+2006 cohort & 341 & 0.57 \\
+2007 cohort & 65 & 0.11 \\
 \midrule
-Total counties &     2,656 \\
+\textbf{Total treated counties} & \textbf{595} & \textbf{1.00} \\
+\midrule
+Late adopters (2008-2010) & 282 & -- \\
+\midrule
+\textbf{Total} & \textbf{877} & \textbf{--} \\
 \bottomrule
 \end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item This table shows the number of counties that received a Craigslist Personals section in each year as well as the share of treated counties (2000-2007) that each timing cohort makes up.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 \end{frame}
 
@@ -1021,6 +901,22 @@ Total counties &     2,656 \\
 \begin{frame}{Rollout of Craigslist's Personals}
     \centering
     \includegraphics[width=\textwidth,height=0.95\textheight,keepaspectratio]{./lecture_includes/rollout.png}
+\end{frame}
+
+\begin{frame}{Who will your comparison group be?}
+
+\begin{itemize}
+\item Recall that you cannot use an already treated group of counties as controls which includes "always treated" but not just that
+\item There are two types of untreated comparison groups you should think carefully about
+	\begin{enumerate}
+	\item \textbf{Not-yet-treated}: In the panel dataset, they are going to be treated but not in every period
+	\item \textbf{Future treated}: A group of counties that will be treated, but only after the panel ends
+	\item \textbf{Never treated}: A group of counties that will never be treated -- not in the panel, not ever
+	\end{enumerate}
+\item Insofar as treatment is random then picking between these won't matter as they'll have the same distribution of $Y^0$ and thus $\Delta E[Y^0]$
+\item But selection on observables and unobservables means you need to think carefully -- we decided on using the not-yet-treated and future-treated as \emph{at least} they will get treated
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}{Births by Treatment Cohort}
@@ -1032,10 +928,23 @@ Total counties &     2,656 \\
 
 \begin{itemize}
 
-\item We used CS to estimate the average effect of the rollout on birth rates 
-\item It's unweighted by population so "average effect on the average county for now
-\item We decided to make our control group the "2008-2010" as our control group because at least they were eventually treated, but doesn't really matter as never-treated gets same things
-\item First, I want to just illustrate for you the "short vs long difference" issue
+\item We used Callaway and Sant'Anna ("CS") to estimate the average effect of Craigslist Personals on county birth rates 
+\item We aggregated our estimated $ATT(g,t)$ coefficients into weighted average event studies and weighted average group effects
+\item But how will I calculate the pre-treatment coefficients?
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{What did regressions do?}
+
+\begin{itemize}
+
+\item In regressions, when you estimate leads and lags, you would drop one year dummy variable
+\item By dropping one year dummy variable, all coefficients were "long difference" calculations relative to that baseline -- both the $ATT(g,t)$ but also the event study pre-treatment coefficients
+\item Which means every event study plot you've ever seen with TWFE always was interpreted relative to a universal baseline (usually $t-1$)
+\item But CS and dCDH allow you to calculate it one of two ways, only one of them is appropriate from a design perspective, and many don't know which one they are doing because they use \emph{software defaults}
 
 \end{itemize}
 
@@ -1043,6 +952,131 @@ Total counties &     2,656 \\
 
 
 
+
+\begin{frame}{Event study lead calculation}
+
+	\begin{enumerate}
+	\item \textbf{Long difference}. Uses a "universal baseline" with a fixed baseline at \( t-1 \) (measures change in trend from the same fixed position)
+	
+	\begin{eqnarray*}
+	 \widehat{\delta}_{t-3} = \left( E[Y|D=1, t-3] - E[Y|D=1,\mathbf{ t-1}] \right) \\
+	 - \left( E[Y|D=0, t-3] - E[Y|D=0, \mathbf{t-1}] \right)
+	 \end{eqnarray*}
+
+
+	\item \textbf{Short gap}. Uses the neighbor for part of the $\mathbf{2 \times 2}$ creating a "rolling" baseline (measures change in trend from the neighbor)
+	
+	\begin{eqnarray*}
+	 \widehat{\delta}_{t-3} = \left( E[Y|D=1, t-3] - E[Y|D=1,\mathbf{ t-2}] \right) \\
+	 - \left( E[Y|D=0, t-3] - E[Y|D=0, \mathbf{t-2}] \right)
+	 \end{eqnarray*}
+	 
+	 \end{enumerate}
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{What Is the Event Study For?}
+
+\begin{itemize}
+\item Use \textbf{long differences}, not short gaps—both treatment effects \emph{and} parallel trends are "long difference" calculations.
+\item Event studies are best viewed as \textit{falsifications}, not as evidence of parallel trends.
+\item A good falsification applies the \textit{same model} to something the treatment can’t affect—e.g., pre-treatment periods under no anticipation.
+\item Since treatment effects use $t-1$ as the baseline, your event study should use $t-1$ as well.
+\item No treatment effect is ever estimated using neighboring periods—avoid "short gaps" in both estimation and visualization.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Detecting it in papers}
+
+\begin{itemize}
+
+\item When reading someone's paper, check to see if there's a missing coefficient at $t-1$ 
+	\begin{enumerate}
+	\item Long differences \emph{never} have a coefficient at baseline, because long differences uses baseline as the comparison \emph{always}
+	\item Short gaps will \emph{always} have a coefficient at baseline
+	\end{enumerate}
+\item When short gaps are above the zero line, it means you have \emph{rising trends} in the long differences and when it is below, it means you have \emph{falling trends}
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Roth simulation}
+
+\begin{itemize}
+\item Let's look at a simulation by Jon Roth (2024) 
+\item He generated the data with rising pre-trends 
+\item He then estimated with TWFE (long difference), CS (short gaps), dCDH (short gaps) and BJS (Kyle can discuss this tomorrow)
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Short Gaps and Long Differences}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{./lecture_includes/shortgap}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Software Syntax}
+
+\begin{itemize}
+
+\item Stata's \texttt{csdid} has default syntax where if you don't indicate which way to do it, it only does it using the short gap method
+\item And in the Stata user command from Stata 18, you actually \textbf{cannot} do short differences 
+\item You have to select \texttt{long2} in \texttt{csdid} and the universal baseline in R's \texttt{did} but if you want short gaps, you do not specify anything
+\item So what is going on is that since it's not documented well, \texttt{csdid} is very population, and default is short gaps, people are using short gaps and probably don't know, and don't explain it in the papers
+\item Here is an NBER WP and AER 2022 that are very clearly \emph{not} using long differences
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.6\textheight]{./lecture_includes/magic_johnson_eventstudy}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.6\textheight]{./lecture_includes/facebook_3.png}
+\end{figure}
+
+\end{frame}
+
+
+
+\begin{frame}{Craigslist Personals Event Studies}
+
+\begin{itemize}
+\item After estimating our $ATT(g,t)s$, we then aggregated them into event study plots as "weighted averages" across relative event time 
+\item Weights are based on the size of groups which means large groups have large influence on the shape of the event study
+\item And for the first 8 months, we:
+	\begin{enumerate}
+	\item Calculated pre-treatment coefficients using "short gaps" as I didn't know about software defaults at the time
+	\end{enumerate}
+\item So let's look at that event study without covariates using CS and "short gap" calculations 
+\end{itemize}
+
+\end{frame}
 
 
 \begin{frame}{Short gap event study, no covariates}
@@ -1053,6 +1087,21 @@ Total counties &     2,656 \\
 \end{figure}
 
 \end{frame}
+
+
+\begin{frame}{Doubt Ensued}
+
+\begin{itemize}
+
+	\item Event study plots persuaded us that unconditional parallel trends was reasonable
+	\item But then I learned about this "software default" in both R and Stata
+	\item If you do not specify \texttt{long2} in \texttt{csdid} or \texttt{base_period="universal"} in $\texttt{R}$, the default is short gaps
+	\item I had always taught long differences -- it never occurred to me that it wasn't doing that (double check the $\mathbf{2 \times 2}$)
+	\item But my event study plots looked so good! And I already had a narrative about "permanent dating"!
+	\end{itemize}
+\end{frame}
+
+
 
 \begin{frame}{Long differences event study, no covariates}
 
@@ -1089,8 +1138,9 @@ Total counties &     2,656 \\
 \begin{itemize}
 \item I was so excited when I saw those flat pre-trends until I learned that the default syntax in Stata's \texttt{csdid} calculated short gaps!
 \item We had a whole story that online dating caused "permanent dating" until I realized that!! lol
-\item But more than that -- was unconditional parallel trends really plausible?  
-\item We are assuming the mean change in "untreated birth rates" is the same in our timing cohorts as the comparison cohort, but that assumes a particular "similar control group" and we have no covariates
+\item But that caused us to start wondering if unconditional parallel trends was plausible?
+\item We started to piece together what our different \emph{units} were -- that is, "counties" who were treated versus "counties" who weren't.  
+\item Why would some counties get a Craigslist but not others?  
 \end{itemize}
 \end{frame}
 
@@ -1112,13 +1162,14 @@ Total counties &     2,656 \\
 \begin{frame}{Is Unconditional parallel trends plausible?}
 
 \begin{itemize}
-\item But my coauthors are demographers who focus a lot on maternal health and children, plus they're labor economists and they urban counties and rural counties differ:
+\item My coauthors are demographers with a 20-year old research agenda in maternal health and children, 
+\item We're all labor economists, familiar with "sorting" into rural vs cities and how those characteristics in populations therefore differ:
 	\begin{itemize}
 	\item Cities have more college educated women, delayed childbearing, lower marriage rates, different racial composition, more access to female healthcare resources
 	\item Rural towns have lower educated women, earlier age at first birth, higher marriage rates, more homogenous, worse healthcare access
 	\end{itemize}
 \item If Craigslist counties are more urban, then our treatment and control are imbalance on covariates that cause trends in $Y^0$
-\item Let's look at mean female population and urban measures by timing cohort
+\item So we looked at mean female population and urban measures by timing cohort to see how bad the covariate imbalance was
 \end{itemize}
 
 \end{frame}
@@ -1273,29 +1324,37 @@ LASSO selected male to female sex ratio, per capita income, and unemployment rat
 \end{frame}
 
 
-\begin{frame}[shrink=20]{Number of counties by treatment cohorts}
+\begin{frame}[shrink=20]{Craigslist Personals Expansion and Sample Shares}
 \begin{table}[htbp]\centering
-\caption{Number of counties by year Craigslist personals appeared}
-\begin{tabular}{lc}
+\footnotesize
+\caption{Craigslist Personals Expansion and Sample Shares}
+\label{tab:table1}
+\begin{threeparttable}
+\begin{tabular}{lcc}
 \toprule
-\textbf{Treatment Cohort} & \textbf{Number of Counties Treated} \\
+\textbf{Craigslist Timing Group} & \textbf{Counties} & \textbf{Share of Treated Counties} \\
 \midrule
-Never treated&       1,779\\
-2000 cohort &           9\\
-2001 cohort &           5\\
-2002 cohort &          12\\
-2003 cohort &          36\\
-2004 cohort &          58\\
-2005 cohort &          69\\
-2006 cohort &         341\\
-2007 cohort &          65\\
-2008 cohort &          66\\
-2009 cohort &         215\\
-2010 cohort &           1\\
+2000 cohort & 9 & 0.02 \\
+2001 cohort & 5 & 0.01 \\
+2002 cohort & 12 & 0.02 \\
+2003 cohort & 36 & 0.06 \\
+2004 cohort & 58 & 0.10 \\
+2005 cohort & 69 & 0.12 \\
+2006 cohort & 341 & 0.57 \\
+2007 cohort & 65 & 0.11 \\
 \midrule
-Total counties &     2,656 \\
+\textbf{Total treated counties} & \textbf{595} & \textbf{1.00} \\
+\midrule
+Late adopters (2008-2010) & 282 & -- \\
+\midrule
+\textbf{Total} & \textbf{877} & \textbf{--} \\
 \bottomrule
 \end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item This table shows the number of counties that received a Craigslist Personals section in each year as well as the share of treated counties (2000-2007) that each timing cohort makes up.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 \end{frame}
 
@@ -1310,30 +1369,180 @@ Total counties &     2,656 \\
 
 \end{frame}
 
-
-\begin{frame}{Writing this up will be horrible!}
+\begin{frame}{Cohort Sized Weighting Scheme}
 
 \begin{itemize}
+\item Any time we combine different groups into a single average, CS uses a cohort-size weighting scheme 
+\item Consider this simple example:
+    \begin{itemize}
+    \item Cohort 1 has 10 units and ATT(1) of 10
+    \item Cohort 2 has 90 units and ATT(2) 50
+    \item Group average is $\frac{(10 \times 10 + 50 \times 90)}{100}=45.1$
+    \end{itemize}
+\item This will necessarily mean that the 2006 cohort is always influential in any aggregation where it appears (including event studies)
+\end{itemize}
 
-\item I don't mind showing you all this because it's a workshop about doing the work
-\item Mark and Dan are going to talk about writing the papers!
-\item But, we have \emph{no idea} how we are going to somehow collect all of this and make one coherent paper (we will be taking Mark and Dan's hidden curriculum workshop!)
-\item Point is, though, that that's a different part of the process -- we want to understand \emph{mechanically} what CS is doing, \emph{numerically} the calculations (e.g., the weighting, the "dropping out cohorts")
-\item We don't just want to jump to some gestation story in other words
+\end{frame}
+
+\begin{frame}{Group-Specific Estimates}
+\centering
+\includegraphics[width=0.95\textwidth]{./lecture_includes/group_averages.png}
+\end{frame}
+
+
+\begin{frame}{Why Different Averages? Weights and Numbers}
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{./lecture_includes/average1.png}
+\end{column}
+\begin{column}{0.51\textwidth}
+\centering
+\includegraphics[width=\textwidth]{./lecture_includes/average2.png}
+\end{column}
+\end{columns}
+
+\vspace{0.5cm}
+\begin{center}
+\large
+Same data, different weighting schemes!
+\end{center}
+\end{frame}
+
+\begin{frame}{Interpreting those late lags}
+
+\begin{itemize}
+\item We find that birth rates increase after CL Personals come to town, but...
+\item We have staggered rollout -- why does that matter?
+\item All cohorts contribute $t=0$, but we lose one cohort at each lag
+\item We do not find positive effects until 3rd lag and there's two things happening
+	\begin{enumerate}
+	\item On the one hand, it takes at least 9 months after meeting "the one" to have a child, so lags are reassuring
+	\item On the other hand, CS is literally losing cohorts with each lag so mechanical sample selection
+	\end{enumerate}
+
 \end{itemize}
 
 \end{frame}
 
 
+\begin{frame}[shrink=20]{Craigslist Personals Expansion and Sample Shares}
+\begin{table}[htbp]\centering
+\footnotesize
+\caption{Craigslist Personals Expansion and Sample Shares}
+\label{tab:table1}
+\begin{threeparttable}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Craigslist Timing Group} & \textbf{Counties} & \textbf{Share of Treated Counties} \\
+\midrule
+2000 cohort & 9 & 0.02 \\
+2001 cohort & 5 & 0.01 \\
+2002 cohort & 12 & 0.02 \\
+2003 cohort & 36 & 0.06 \\
+2004 cohort & 58 & 0.10 \\
+2005 cohort & 69 & 0.12 \\
+2006 cohort & 341 & 0.57 \\
+2007 cohort & 65 & 0.11 \\
+\midrule
+\textbf{Total treated counties} & \textbf{595} & \textbf{1.00} \\
+\midrule
+Late adopters (2008-2010) & 282 & -- \\
+\midrule
+\textbf{Total} & \textbf{877} & \textbf{--} \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item This table shows the number of counties that received a Craigslist Personals section in each year as well as the share of treated counties (2000-2007) that each timing cohort makes up.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+\end{frame}
 
-\begin{frame}{Be Curious, Not Judgment -- Ted Lasso}
+\begin{frame}{Differentially sized cohorts}
 
 \begin{itemize}
+\item So, the 2006 cohort is almost 60\% of all treated units and thus it's weight is \emph{massive} 
+\item This means the 2006 cohort will swamp every aggregation given how CS aggregates $ATT(g,t)$ into more conventional ATT parameters
+    \begin{itemize}
+    \item Group ATT is negative but simple ATT is positive -- different weighting schemes (averaging over groups vs over each group lag)
+    \item Simple ATT is not significant with the 2006 cohort included, but it is when it's gone
+    \end{itemize}
+\item But it's not just size -- those late adopters are \emph{rural}, they are \emph{much later} and we are trying to understand if maybe Craigslist Personals would have different effects on large cities in 2000 versus rural areas in the southeastern US in 2006
+\end{itemize}
+\end{frame}
 
-\item Do everything you can to figure out the treatment assignment mechanism 
-\item Shoeleather dominates technical knowledge (Rubin 2008 "Design Trumps Analysis"; Freedman 1991)
-\item Consider interviewing key people!  But don't ask them if they randomized -- they don't know what that word means
-\item Ask them "hey, why did you do that thing you did?" or "hey, why did some people get put into your program but not others?"
+\begin{frame}{10-point Checklist}
+
+\begin{enumerate}
+\item \textbf{Define Your Target Parameter: Potential Outcomes, Population, and Weighted Averages:} What exactly are you trying to estimate and who is your population? What is your research question asking and how can that be expressed as a proper average treatment effect?  Can you justify that decision to someone else?
+\item \textbf{Count the Units in Your Cohorts} Count the number of units that are treated in each cohort, including the cohort of "never treated" and the cohort of "always treated."
+\item \textbf{Plot Treatment Rollout:} Visualize when and how treatment varies across units and time.
+\item \textbf{Pick Your Control Group:} Decide which units will serve as your counterfactual and justify that choice.
+\item \textbf{Choose Between Unconditional and Conditional Parallel Trends} Assess whether treated and control units would have followed similar paths absent treatment.
+\end{enumerate}
+
+
+\end{frame}
+
+\begin{frame}{10-point Checklist}
+
+\begin{enumerate}
+
+\item[6. ] \textbf{Check Covariate Imbalance:} Examine whether observable characteristics differ systematically between treated and control groups.  Check this a variety of different ways. 
+\item[7. ] \textbf{Plot Average Outcomes Across Cohorts:} Look at outcome trends by treatment timing to spot potential problems.
+\item[8. ] \textbf{Estimator Selection and Assumptions:} Choose the difference-in-differences estimator that fits your design and understand what it assumes.
+\item[9. ] \textbf{Checking for Parallel Trends Violations with Falsifications, Event Studies and Sensitivity Analysis:} Test your identifying assumptions rigorously using the techniques we've discussed. Make sure you understand how your pre-trends are calculated and confirm they are what you intended to calculate. 
+\item[10. ] \textbf{DDDiD, or "Don't Do Diff-in-Diff":} Diff-in-diff needs parallel trends, and if you lose confidence in that, consider moving to a different design -- even synthetic control
+
+\end{enumerate}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Concluding Remarks}
+
+\begin{itemize}
+\item Identify which comparisons contributed to your treatment effect—this is knowable.
+\item Ask whether those comparisons are the ones you actually wanted.
+\item Don’t commit to narratives before fully understanding the $2 \times 2$ and the aggregation weights.
+\item Choose covariates intentionally; avoid common support issues.
+\item Designing the study and writing the paper are separate tasks—focus on design first.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Skepticism about unconditional parallel trends is usually warranted}
+
+\begin{itemize}
+\item Do not over-rely on the event study; do not undervalue it either -- it is not proof of parallel trends
+\item Selection on observables combined with covariate specific trends can mask problems in your design
+\item Keep asking yourself "who is my comparison for this calculation"; keep reminding yourself of $\mathbf{2 \times 2}$ building blocks
+\item If the treatment is random, then covariates are unnecessary and you can rely on \emph{unconditional parallel trends}, but if it wasn't, then why is unconditional parallel trends plausible?
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Don't Ski Faster Than You Can See}
+
+\begin{itemize}
+\item Applied empirical projects, if not built step by step, can quickly become dangerous—like skiing into terrain you can’t see.
+\item You may find yourself committed to a model or a narrative, not because it’s right, but because it’s what you’ve been using.
+\item A checklist protects against that; sometimes it’s wiser to go slow, be meticulous, and only proceed once each step is solid.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Learn the institutional details}
+
+\begin{itemize}
+\item Consider interviewing key people; just don't ask them if they randomized because they don't know what that word means
+\item Ask them "why did some people go into your program but not others" and "why do you think that happened?"
+\item See if you can't figure out the \emph{treatment assignment mechanism} in their own words -- you're wanting to know what causes the variation in your treatment
 \end{itemize}
 
 \end{frame}
@@ -1349,8 +1558,6 @@ Total counties &     2,656 \\
 
     
 \end{frame}
-
-
 
 
 \section{Alternative Estimators and Sensitivity Analysis}

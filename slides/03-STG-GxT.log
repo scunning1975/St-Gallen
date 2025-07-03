@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.14)  2 JUL 2025 11:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.14)  3 JUL 2025 09:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1543,7 +1543,14 @@ LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/n' aliased to
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/n' will be
 (Font)              scaled to size 10.95pt on input line 35.
 
-(./03-STG-GxT.aux)
+(./03-STG-GxT.aux
+
+LaTeX Warning: Label `tab:table1' multiply defined.
+
+
+LaTeX Warning: Label `tab:table1' multiply defined.
+
+)
 \openout1 = `03-STG-GxT.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -1698,7 +1705,7 @@ LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/n' aliased to
 (Font)              `OT1/Roboto-LF/light/n' on input line 35.
 LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/n' will be
 (Font)              scaled to size 6.0pt on input line 35.
-<./lecture_includes/banner_cropped.png, id=89, 1027.84pt x 651.43375pt>
+<./lecture_includes/banner_cropped.png, id=85, 1027.84pt x 651.43375pt>
 File: ./lecture_includes/banner_cropped.png Graphic file (type png)
 <use ./lecture_includes/banner_cropped.png>
 Package pdftex.def Info: ./lecture_includes/banner_cropped.png  used on input l
@@ -1762,7 +1769,7 @@ LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/n' will be
 ] [9
 
 ]
-<./lecture_includes/bacon_goodman_2.png, id=173, 650.43pt x 476.5002pt>
+<./lecture_includes/bacon_goodman_2.png, id=167, 650.43pt x 476.5002pt>
 File: ./lecture_includes/bacon_goodman_2.png Graphic file (type png)
 <use ./lecture_includes/bacon_goodman_2.png>
 Package pdftex.def Info: ./lecture_includes/bacon_goodman_2.png  used on input 
@@ -1771,7 +1778,7 @@ line 160.
  [10
 
  <./lecture_includes/bacon_goodman_2.png>]
-<./lecture_includes/bacon_goodman_3.png, id=182, 650.43pt x 483.7272pt>
+<./lecture_includes/bacon_goodman_3.png, id=176, 650.43pt x 483.7272pt>
 File: ./lecture_includes/bacon_goodman_3.png Graphic file (type png)
 <use ./lecture_includes/bacon_goodman_3.png>
 Package pdftex.def Info: ./lecture_includes/bacon_goodman_3.png  used on input 
@@ -1780,7 +1787,7 @@ line 170.
  [11
 
  <./lecture_includes/bacon_goodman_3.png>]
-<./lecture_includes/bacon_goodman_4.png, id=191, 650.43pt x 482.7636pt>
+<./lecture_includes/bacon_goodman_4.png, id=184, 650.43pt x 482.7636pt>
 File: ./lecture_includes/bacon_goodman_4.png Graphic file (type png)
 <use ./lecture_includes/bacon_goodman_4.png>
 Package pdftex.def Info: ./lecture_includes/bacon_goodman_4.png  used on input 
@@ -1789,7 +1796,7 @@ line 178.
  [12
 
  <./lecture_includes/bacon_goodman_4.png>]
-<./lecture_includes/bacon_goodman_6.png, id=199, 650.43pt x 482.7636pt>
+<./lecture_includes/bacon_goodman_6.png, id=193, 650.43pt x 482.7636pt>
 File: ./lecture_includes/bacon_goodman_6.png Graphic file (type png)
 <use ./lecture_includes/bacon_goodman_6.png>
 Package pdftex.def Info: ./lecture_includes/bacon_goodman_6.png  used on input 
@@ -1799,7 +1806,7 @@ line 189.
 [13
 
  <./lecture_includes/bacon_goodman_6.png>]
-<./lecture_includes/bacon_goodman_7.png, id=208, 650.43pt x 482.7636pt>
+<./lecture_includes/bacon_goodman_7.png, id=202, 650.43pt x 482.7636pt>
 File: ./lecture_includes/bacon_goodman_7.png Graphic file (type png)
 <use ./lecture_includes/bacon_goodman_7.png>
 Package pdftex.def Info: ./lecture_includes/bacon_goodman_7.png  used on input 
@@ -1845,13 +1852,13 @@ Overfull \hbox (3.46854pt too wide) in alignment at lines 326--326
 ] [25
 
 ]
-<./lecture_includes/constant_te.png, id=285, 621.82312pt x 686.06313pt>
+<./lecture_includes/constant_te.png, id=279, 621.82312pt x 686.06313pt>
 File: ./lecture_includes/constant_te.png Graphic file (type png)
 <use ./lecture_includes/constant_te.png>
 Package pdftex.def Info: ./lecture_includes/constant_te.png  used on input line
  373.
 (pdftex.def)             Requested size: 156.48961pt x 184.9464pt.
-<./lecture_includes/dynamic_te.png, id=286, 612.78937pt x 688.07062pt>
+<./lecture_includes/dynamic_te.png, id=280, 612.78937pt x 688.07062pt>
 File: ./lecture_includes/dynamic_te.png Graphic file (type png)
 <use ./lecture_includes/dynamic_te.png>
 Package pdftex.def Info: ./lecture_includes/dynamic_te.png  used on input line 
@@ -1860,7 +1867,7 @@ Package pdftex.def Info: ./lecture_includes/dynamic_te.png  used on input line
  [26
 
  <./lecture_includes/constant_te.png> <./lecture_includes/dynamic_te.png>]
-<./lecture_includes/baker_attgt.png, id=295, 554.07pt x 750.805pt>
+<./lecture_includes/baker_attgt.png, id=289, 554.07pt x 750.805pt>
 File: ./lecture_includes/baker_attgt.png Graphic file (type png)
 <use ./lecture_includes/baker_attgt.png>
 Package pdftex.def Info: ./lecture_includes/baker_attgt.png  used on input line
@@ -1928,7 +1935,7 @@ Overfull \hbox (46.4292pt too wide) in alignment at lines 520--520
 ] [39
 
 ]
-<./lecture_includes/baker_attgt_cs.png, id=379, 702.12312pt x 480.79625pt>
+<./lecture_includes/baker_attgt_cs.png, id=373, 702.12312pt x 480.79625pt>
 File: ./lecture_includes/baker_attgt_cs.png Graphic file (type png)
 <use ./lecture_includes/baker_attgt_cs.png>
 Package pdftex.def Info: ./lecture_includes/baker_attgt_cs.png  used on input l
@@ -1939,503 +1946,532 @@ ine 600.
  <./lecture_includes/baker_attgt_cs.png>]
 [41
 
-] [42
+] (./03-STG-GxT.toc) [42
 
-]
-Overfull \vbox (13.82736pt too high) detected at line 673
- []
-
-[43
+] [43
 
 ] [44
 
 ] [45
 
-] [46
+]
+<./lecture_includes/online_dating.png, id=420, 919.93687pt x 664.4825pt>
+File: ./lecture_includes/online_dating.png Graphic file (type png)
+<use ./lecture_includes/online_dating.png>
+Package pdftex.def Info: ./lecture_includes/online_dating.png  used on input li
+ne 690.
+(pdftex.def)             Requested size: 316.73286pt x 228.77626pt.
+ [46
 
-] [47
+ <./lecture_includes/online_dating.png>] [47
+
+] [48
+
+] [49
 
 ]
-<./lecture_includes/shortgap.png, id=432, 984.17688pt x 817.0525pt>
+<./lecture_includes/melanie1.png, id=447, 1121.69063pt x 364.36125pt>
+File: ./lecture_includes/melanie1.png Graphic file (type png)
+<use ./lecture_includes/melanie1.png>
+Package pdftex.def Info: ./lecture_includes/melanie1.png  used on input line 74
+3.
+(pdftex.def)             Requested size: 704.28978pt x 228.77626pt.
+
+Overfull \hbox (370.09442pt too wide) in paragraph at lines 743--743
+ [] 
+ []
+
+
+Overfull \vbox (13.93285pt too high) detected at line 743
+ []
+
+[50
+
+ <./lecture_includes/melanie1.png>]
+<./lecture_includes/melanie2.png, id=456, 1192.455pt x 392.21532pt>
+File: ./lecture_includes/melanie2.png Graphic file (type png)
+<use ./lecture_includes/melanie2.png>
+Package pdftex.def Info: ./lecture_includes/melanie2.png  used on input line 75
+2.
+(pdftex.def)             Requested size: 409.14119pt x 134.5733pt.
+
+Overfull \hbox (74.94583pt too wide) in paragraph at lines 752--752
+ [] 
+ []
+
+[51
+
+ <./lecture_includes/melanie2.png>]
+<./lecture_includes/melanie3.png, id=464, 1293.33188pt x 417.05812pt>
+File: ./lecture_includes/melanie3.png Graphic file (type png)
+<use ./lecture_includes/melanie3.png>
+Package pdftex.def Info: ./lecture_includes/melanie3.png  used on input line 76
+0.
+(pdftex.def)             Requested size: 709.45995pt x 228.77626pt.
+
+Overfull \hbox (375.26459pt too wide) in paragraph at lines 760--760
+ [] 
+ []
+
+
+Overfull \vbox (13.93285pt too high) detected at line 760
+ []
+
+[52
+
+ <./lecture_includes/melanie3.png>]
+<./lecture_includes/melanie4.png, id=472, 1085.55562pt x 376.40625pt>
+File: ./lecture_includes/melanie4.png Graphic file (type png)
+<use ./lecture_includes/melanie4.png>
+Package pdftex.def Info: ./lecture_includes/melanie4.png  used on input line 76
+8.
+(pdftex.def)             Requested size: 659.80272pt x 228.77626pt.
+
+Overfull \hbox (325.60736pt too wide) in paragraph at lines 768--768
+ [] 
+ []
+
+
+Overfull \vbox (13.93285pt too high) detected at line 768
+ []
+
+[53
+
+ <./lecture_includes/melanie4.png>]
+<./lecture_includes/melanie5.png, id=480, 1190.94937pt x 465.23813pt>
+File: ./lecture_includes/melanie5.png Graphic file (type png)
+<use ./lecture_includes/melanie5.png>
+Package pdftex.def Info: ./lecture_includes/melanie5.png  used on input line 77
+6.
+(pdftex.def)             Requested size: 585.6238pt x 228.77626pt.
+
+Overfull \hbox (251.42844pt too wide) in paragraph at lines 776--776
+ [] 
+ []
+
+
+Overfull \vbox (13.93285pt too high) detected at line 776
+ []
+
+[54
+
+ <./lecture_includes/melanie5.png>]
+<./lecture_includes/melanie6.png, id=488, 1018.55531pt x 485.56406pt>
+File: ./lecture_includes/melanie6.png Graphic file (type png)
+<use ./lecture_includes/melanie6.png>
+Package pdftex.def Info: ./lecture_includes/melanie6.png  used on input line 78
+4.
+(pdftex.def)             Requested size: 479.8867pt x 228.77626pt.
+
+Overfull \hbox (145.69135pt too wide) in paragraph at lines 784--784
+ [] 
+ []
+
+
+Overfull \vbox (13.93285pt too high) detected at line 784
+ []
+
+[55
+
+ <./lecture_includes/melanie6.png>]
+<./lecture_includes/melanie7.png, id=497, 973.38657pt x 450.18187pt>
+File: ./lecture_includes/melanie7.png Graphic file (type png)
+<use ./lecture_includes/melanie7.png>
+Package pdftex.def Info: ./lecture_includes/melanie7.png  used on input line 79
+2.
+(pdftex.def)             Requested size: 494.66797pt x 228.77626pt.
+
+Overfull \hbox (160.47261pt too wide) in paragraph at lines 792--792
+ [] 
+ []
+
+
+Overfull \vbox (13.93285pt too high) detected at line 792
+ []
+
+[56
+
+ <./lecture_includes/melanie7.png>]
+<./lecture_includes/melanie8.png, id=505, 901.86937pt x 427.5975pt>
+File: ./lecture_includes/melanie8.png Graphic file (type png)
+<use ./lecture_includes/melanie8.png>
+Package pdftex.def Info: ./lecture_includes/melanie8.png  used on input line 80
+0.
+(pdftex.def)             Requested size: 482.51599pt x 228.77626pt.
+
+Overfull \hbox (148.32063pt too wide) in paragraph at lines 800--800
+ [] 
+ []
+
+
+Overfull \vbox (13.93285pt too high) detected at line 800
+ []
+
+[57
+
+ <./lecture_includes/melanie8.png>] [58
+
+] [59
+
+]
+<./lecture_includes/national_br.png, id=525, 1268.74pt x 922.44624pt>
+File: ./lecture_includes/national_br.png Graphic file (type png)
+<use ./lecture_includes/national_br.png>
+Package pdftex.def Info: ./lecture_includes/national_br.png  used on input line
+ 848.
+(pdftex.def)             Requested size: 167.09088pt x 121.48459pt.
+<./lecture_includes/county_br.png, id=526, 1268.74pt x 922.44624pt>
+File: ./lecture_includes/county_br.png Graphic file (type png)
+<use ./lecture_includes/county_br.png>
+Package pdftex.def Info: ./lecture_includes/county_br.png  used on input line 8
+48.
+(pdftex.def)             Requested size: 167.09088pt x 121.48459pt.
+ [60
+
+ <./lecture_includes/national_br.png> <./lecture_includes/county_br.png>]
+<./lecture_includes/birth_rates_digital_timeline.png, id=533, 3011.25pt x 2007.
+5pt>
+File: ./lecture_includes/birth_rates_digital_timeline.png Graphic file (type pn
+g)
+<use ./lecture_includes/birth_rates_digital_timeline.png>
+Package pdftex.def Info: ./lecture_includes/birth_rates_digital_timeline.png  u
+sed on input line 860.
+(pdftex.def)             Requested size: 242.19147pt x 161.48961pt.
+ [61
+
+ <./lecture_includes/birth_rates_digital_timeline.png>]
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/n' aliased to
+(Font)              `OT1/Roboto-LF/light/n' on input line 898.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/n' will be
+(Font)              scaled to size 9.0pt on input line 898.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/b/n' aliased to
+(Font)              `OT1/Roboto-LF/bold/n' on input line 898.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/bold/n' will be
+(Font)              scaled to size 9.0pt on input line 898.
+ [62
+
+]
+<./lecture_includes/rollout.png, id=548, 939.51pt x 939.51pt>
+File: ./lecture_includes/rollout.png Graphic file (type png)
+<use ./lecture_includes/rollout.png>
+Package pdftex.def Info: ./lecture_includes/rollout.png  used on input line 904
+.
+(pdftex.def)             Requested size: 255.67809pt x 255.67809pt.
+
+Overfull \vbox (17.87459pt too high) detected at line 904
+ []
+
+[63
+
+ <./lecture_includes/rollout.png>] [64
+
+]
+<./lecture_includes/pretty_births.png, id=561, 2007.5pt x 1606.0pt>
+File: ./lecture_includes/pretty_births.png Graphic file (type png)
+<use ./lecture_includes/pretty_births.png>
+Package pdftex.def Info: ./lecture_includes/pretty_births.png  used on input li
+ne 924.
+(pdftex.def)             Requested size: 302.76613pt x 242.2129pt.
+
+Overfull \vbox (4.40941pt too high) detected at line 924
+ []
+
+[65
+
+ <./lecture_includes/pretty_births.png>] [66
+
+] [67
+
+] [68
+
+] [69
+
+] [70
+
+] [71
+
+]
+<./lecture_includes/shortgap.png, id=607, 984.17688pt x 817.0525pt>
 File: ./lecture_includes/shortgap.png Graphic file (type png)
 <use ./lecture_includes/shortgap.png>
-Package pdftex.def Info: ./lecture_includes/shortgap.png  used on input line 73
-6.
+Package pdftex.def Info: ./lecture_includes/shortgap.png  used on input line 10
+29.
 (pdftex.def)             Requested size: 259.34895pt x 215.30856pt.
- [48
+
+[72
 
  <./lecture_includes/shortgap.png>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [49
+ [73
 
 ]
-<./lecture_includes/magic_johnson_eventstudy.png, id=448, 523.9575pt x 244.4131
+<./lecture_includes/magic_johnson_eventstudy.png, id=623, 523.9575pt x 244.4131
 3pt>
 File: ./lecture_includes/magic_johnson_eventstudy.png Graphic file (type png)
 <use ./lecture_includes/magic_johnson_eventstudy.png>
 Package pdftex.def Info: ./lecture_includes/magic_johnson_eventstudy.png  used 
-on input line 761.
+on input line 1054.
 (pdftex.def)             Requested size: 346.19678pt x 161.48961pt.
 
-Overfull \hbox (12.00142pt too wide) in paragraph at lines 761--761
+Overfull \hbox (12.00142pt too wide) in paragraph at lines 1054--1054
  [] 
  []
 
-[50
+[74
 
  <./lecture_includes/magic_johnson_eventstudy.png>]
-<./lecture_includes/facebook_3.png, id=456, 717.68124pt x 445.16313pt>
+<./lecture_includes/facebook_3.png, id=631, 717.68124pt x 445.16313pt>
 File: ./lecture_includes/facebook_3.png Graphic file (type png)
 <use ./lecture_includes/facebook_3.png>
 Package pdftex.def Info: ./lecture_includes/facebook_3.png  used on input line 
-770.
+1063.
 (pdftex.def)             Requested size: 260.34717pt x 161.48961pt.
- [51
+ [75
 
- <./lecture_includes/facebook_3.png>] (./03-STG-GxT.toc) [52
-
-] [53
-
-] [54
-
-] [55
+ <./lecture_includes/facebook_3.png>] [76
 
 ]
-<./lecture_includes/online_dating.png, id=499, 919.93687pt x 664.4825pt>
-File: ./lecture_includes/online_dating.png Graphic file (type png)
-<use ./lecture_includes/online_dating.png>
-Package pdftex.def Info: ./lecture_includes/online_dating.png  used on input li
-ne 837.
-(pdftex.def)             Requested size: 316.73286pt x 228.77626pt.
- [56
-
- <./lecture_includes/online_dating.png>] [57
-
-] [58
-
-] [59
-
-]
-<./lecture_includes/melanie1.png, id=525, 1121.69063pt x 364.36125pt>
-File: ./lecture_includes/melanie1.png Graphic file (type png)
-<use ./lecture_includes/melanie1.png>
-Package pdftex.def Info: ./lecture_includes/melanie1.png  used on input line 89
-0.
-(pdftex.def)             Requested size: 704.28978pt x 228.77626pt.
-
-Overfull \hbox (370.09442pt too wide) in paragraph at lines 890--890
- [] 
- []
-
-
-Overfull \vbox (13.93285pt too high) detected at line 890
- []
-
-[60
-
- <./lecture_includes/melanie1.png>]
-<./lecture_includes/melanie2.png, id=533, 1192.455pt x 392.21532pt>
-File: ./lecture_includes/melanie2.png Graphic file (type png)
-<use ./lecture_includes/melanie2.png>
-Package pdftex.def Info: ./lecture_includes/melanie2.png  used on input line 89
-9.
-(pdftex.def)             Requested size: 409.14119pt x 134.5733pt.
-
-Overfull \hbox (74.94583pt too wide) in paragraph at lines 899--899
- [] 
- []
-
-[61
-
- <./lecture_includes/melanie2.png>]
-<./lecture_includes/melanie3.png, id=542, 1293.33188pt x 417.05812pt>
-File: ./lecture_includes/melanie3.png Graphic file (type png)
-<use ./lecture_includes/melanie3.png>
-Package pdftex.def Info: ./lecture_includes/melanie3.png  used on input line 90
-7.
-(pdftex.def)             Requested size: 709.45995pt x 228.77626pt.
-
-Overfull \hbox (375.26459pt too wide) in paragraph at lines 907--907
- [] 
- []
-
-
-Overfull \vbox (13.93285pt too high) detected at line 907
- []
-
-[62
-
- <./lecture_includes/melanie3.png>]
-<./lecture_includes/melanie4.png, id=550, 1085.55562pt x 376.40625pt>
-File: ./lecture_includes/melanie4.png Graphic file (type png)
-<use ./lecture_includes/melanie4.png>
-Package pdftex.def Info: ./lecture_includes/melanie4.png  used on input line 91
-5.
-(pdftex.def)             Requested size: 659.80272pt x 228.77626pt.
-
-Overfull \hbox (325.60736pt too wide) in paragraph at lines 915--915
- [] 
- []
-
-
-Overfull \vbox (13.93285pt too high) detected at line 915
- []
-
-[63
-
- <./lecture_includes/melanie4.png>]
-<./lecture_includes/melanie5.png, id=558, 1190.94937pt x 465.23813pt>
-File: ./lecture_includes/melanie5.png Graphic file (type png)
-<use ./lecture_includes/melanie5.png>
-Package pdftex.def Info: ./lecture_includes/melanie5.png  used on input line 92
-3.
-(pdftex.def)             Requested size: 585.6238pt x 228.77626pt.
-
-Overfull \hbox (251.42844pt too wide) in paragraph at lines 923--923
- [] 
- []
-
-
-Overfull \vbox (13.93285pt too high) detected at line 923
- []
-
-[64
-
- <./lecture_includes/melanie5.png>]
-<./lecture_includes/melanie6.png, id=566, 1018.55531pt x 485.56406pt>
-File: ./lecture_includes/melanie6.png Graphic file (type png)
-<use ./lecture_includes/melanie6.png>
-Package pdftex.def Info: ./lecture_includes/melanie6.png  used on input line 93
-1.
-(pdftex.def)             Requested size: 479.8867pt x 228.77626pt.
-
-Overfull \hbox (145.69135pt too wide) in paragraph at lines 931--931
- [] 
- []
-
-
-Overfull \vbox (13.93285pt too high) detected at line 931
- []
-
-[65
-
- <./lecture_includes/melanie6.png>]
-<./lecture_includes/melanie7.png, id=574, 973.38657pt x 450.18187pt>
-File: ./lecture_includes/melanie7.png Graphic file (type png)
-<use ./lecture_includes/melanie7.png>
-Package pdftex.def Info: ./lecture_includes/melanie7.png  used on input line 93
-9.
-(pdftex.def)             Requested size: 494.66797pt x 228.77626pt.
-
-Overfull \hbox (160.47261pt too wide) in paragraph at lines 939--939
- [] 
- []
-
-
-Overfull \vbox (13.93285pt too high) detected at line 939
- []
-
-[66
-
- <./lecture_includes/melanie7.png>]
-<./lecture_includes/melanie8.png, id=582, 901.86937pt x 427.5975pt>
-File: ./lecture_includes/melanie8.png Graphic file (type png)
-<use ./lecture_includes/melanie8.png>
-Package pdftex.def Info: ./lecture_includes/melanie8.png  used on input line 94
-7.
-(pdftex.def)             Requested size: 482.51599pt x 228.77626pt.
-
-Overfull \hbox (148.32063pt too wide) in paragraph at lines 947--947
- [] 
- []
-
-
-Overfull \vbox (13.93285pt too high) detected at line 947
- []
-
-[67
-
- <./lecture_includes/melanie8.png>] [68
-
-]
-<./lecture_includes/national_br.png, id=597, 1268.74pt x 922.44624pt>
-File: ./lecture_includes/national_br.png Graphic file (type png)
-<use ./lecture_includes/national_br.png>
-Package pdftex.def Info: ./lecture_includes/national_br.png  used on input line
- 978.
-(pdftex.def)             Requested size: 167.09088pt x 121.48459pt.
-<./lecture_includes/county_br.png, id=598, 1268.74pt x 922.44624pt>
-File: ./lecture_includes/county_br.png Graphic file (type png)
-<use ./lecture_includes/county_br.png>
-Package pdftex.def Info: ./lecture_includes/county_br.png  used on input line 9
-78.
-(pdftex.def)             Requested size: 167.09088pt x 121.48459pt.
- [69
-
- <./lecture_includes/national_br.png> <./lecture_includes/county_br.png>]
-<./lecture_includes/python_births.png, id=606, 843.3909pt x 397.84634pt>
-File: ./lecture_includes/python_births.png Graphic file (type png)
-<use ./lecture_includes/python_births.png>
-Package pdftex.def Info: ./lecture_includes/python_births.png  used on input li
-ne 988.
-(pdftex.def)             Requested size: 342.33072pt x 161.48961pt.
-
-Overfull \hbox (8.13536pt too wide) in paragraph at lines 988--988
- [] 
- []
-
-[70
-
- <./lecture_includes/python_births.png>] [71
-
-]
-<./lecture_includes/rollout.png, id=621, 895.345pt x 895.345pt>
-File: ./lecture_includes/rollout.png Graphic file (type png)
-<use ./lecture_includes/rollout.png>
-Package pdftex.def Info: ./lecture_includes/rollout.png  used on input line 102
-4.
-(pdftex.def)             Requested size: 255.68146pt x 255.68146pt.
-
-Overfull \vbox (17.87796pt too high) detected at line 1024
- []
-
-[72
-
- <./lecture_includes/rollout.png>]
-<./lecture_includes/pretty_births.png, id=628, 2007.5pt x 1606.0pt>
-File: ./lecture_includes/pretty_births.png Graphic file (type png)
-<use ./lecture_includes/pretty_births.png>
-Package pdftex.def Info: ./lecture_includes/pretty_births.png  used on input li
-ne 1028.
-(pdftex.def)             Requested size: 302.76613pt x 242.2129pt.
-
-Overfull \vbox (4.40941pt too high) detected at line 1028
- []
-
-[73
-
- <./lecture_includes/pretty_births.png>] [74
-
-]
-<./lecture_includes/es_births_shortnone.png, id=642, 1071.00125pt x 778.91pt>
+<./lecture_includes/es_births_shortnone.png, id=645, 1071.00125pt x 778.91pt>
 File: ./lecture_includes/es_births_shortnone.png Graphic file (type png)
 <use ./lecture_includes/es_births_shortnone.png>
 Package pdftex.def Info: ./lecture_includes/es_births_shortnone.png  used on in
-put line 1055.
+put line 1089.
 (pdftex.def)             Requested size: 314.55354pt x 228.77626pt.
- [75
+ [77
 
  <./lecture_includes/es_births_shortnone.png>]
-<./lecture_includes/es_births_none.png, id=649, 1071.00125pt x 778.91pt>
+[78
+
+]
+<./lecture_includes/es_births_none.png, id=658, 1071.00125pt x 778.91pt>
 File: ./lecture_includes/es_births_none.png Graphic file (type png)
 <use ./lecture_includes/es_births_none.png>
 Package pdftex.def Info: ./lecture_includes/es_births_none.png  used on input l
-ine 1064.
+ine 1113.
 (pdftex.def)             Requested size: 314.55354pt x 228.77626pt.
- [76
+ [79
 
  <./lecture_includes/es_births_none.png>]
 File: ./lecture_includes/es_births_shortnone.png Graphic file (type png)
 <use ./lecture_includes/es_births_shortnone.png>
 Package pdftex.def Info: ./lecture_includes/es_births_shortnone.png  used on in
-put line 1084.
+put line 1133.
 (pdftex.def)             Requested size: 166.52643pt x 121.11516pt.
 
-Overfull \hbox (6.11409pt too wide) in paragraph at lines 1084--1084
+Overfull \hbox (6.11409pt too wide) in paragraph at lines 1133--1133
  [][] 
  []
 
 File: ./lecture_includes/es_births_none.png Graphic file (type png)
 <use ./lecture_includes/es_births_none.png>
 Package pdftex.def Info: ./lecture_includes/es_births_none.png  used on input l
-ine 1084.
+ine 1133.
 (pdftex.def)             Requested size: 166.52643pt x 121.11516pt.
 
-Overfull \hbox (6.11409pt too wide) in paragraph at lines 1084--1084
+Overfull \hbox (6.11409pt too wide) in paragraph at lines 1133--1133
  [][] 
  []
 
-[77
+[80
 
-] [78
+] [81
 
-] [79
+] [82
 
-] [80
+] [83
 
 ]
-<./lecture_includes/pretty_fempop.png, id=683, 2007.5pt x 1606.0pt>
+<./lecture_includes/pretty_fempop.png, id=692, 2007.5pt x 1606.0pt>
 File: ./lecture_includes/pretty_fempop.png Graphic file (type png)
 <use ./lecture_includes/pretty_fempop.png>
 Package pdftex.def Info: ./lecture_includes/pretty_fempop.png  used on input li
-ne 1134.
+ne 1185.
 (pdftex.def)             Requested size: 285.94919pt x 228.77626pt.
- [81
+ [84
 
  <./lecture_includes/pretty_fempop.png>]
-<./lecture_includes/pretty_RUCC.png, id=690, 2007.5pt x 1606.0pt>
+<./lecture_includes/pretty_RUCC.png, id=699, 2007.5pt x 1606.0pt>
 File: ./lecture_includes/pretty_RUCC.png Graphic file (type png)
 <use ./lecture_includes/pretty_RUCC.png>
 Package pdftex.def Info: ./lecture_includes/pretty_RUCC.png  used on input line
- 1144.
+ 1195.
 (pdftex.def)             Requested size: 285.94919pt x 228.77626pt.
- [82
+ [85
 
- <./lecture_includes/pretty_RUCC.png>] [83
+ <./lecture_includes/pretty_RUCC.png>] [86
 
 ]
-<./lecture_includes/es_br1544_combined.png, id=703, 1192.455pt x 867.24pt>
+<./lecture_includes/es_br1544_combined.png, id=713, 1192.455pt x 867.24pt>
 File: ./lecture_includes/es_br1544_combined.png Graphic file (type png)
 <use ./lecture_includes/es_br1544_combined.png>
 Package pdftex.def Info: ./lecture_includes/es_br1544_combined.png  used on inp
-ut line 1175.
+ut line 1226.
 (pdftex.def)             Requested size: 314.56163pt x 228.77626pt.
- [84
+ [87
 
  <./lecture_includes/es_br1544_combined.png>]
 File: ./lecture_includes/es_births_shortnone.png Graphic file (type png)
 <use ./lecture_includes/es_births_shortnone.png>
 Package pdftex.def Info: ./lecture_includes/es_births_shortnone.png  used on in
-put line 1194.
+put line 1245.
 (pdftex.def)             Requested size: 166.52643pt x 121.11516pt.
 
-Overfull \hbox (6.11409pt too wide) in paragraph at lines 1194--1194
+Overfull \hbox (6.11409pt too wide) in paragraph at lines 1245--1245
  [][] 
  []
 
-<./lecture_includes/es_births_RUCC.png, id=710, 1268.74pt x 922.44624pt>
+<./lecture_includes/es_births_RUCC.png, id=720, 1268.74pt x 922.44624pt>
 File: ./lecture_includes/es_births_RUCC.png Graphic file (type png)
 <use ./lecture_includes/es_births_RUCC.png>
 Package pdftex.def Info: ./lecture_includes/es_births_RUCC.png  used on input l
-ine 1194.
+ine 1245.
 (pdftex.def)             Requested size: 166.56818pt x 121.11516pt.
 
-Overfull \hbox (6.15584pt too wide) in paragraph at lines 1194--1194
+Overfull \hbox (6.15584pt too wide) in paragraph at lines 1245--1245
  [][] 
  []
 
-[85
+[88
 
  <./lecture_includes/es_births_RUCC.png>]
-<./lecture_includes/es_br1544_RUCCcombined.png, id=718, 3011.25pt x 2258.4375pt
+<./lecture_includes/es_br1544_RUCCcombined.png, id=727, 3011.25pt x 2258.4375pt
 >
 File: ./lecture_includes/es_br1544_RUCCcombined.png Graphic file (type png)
 <use ./lecture_includes/es_br1544_RUCCcombined.png>
 Package pdftex.def Info: ./lecture_includes/es_br1544_RUCCcombined.png  used on
- input line 1202.
+ input line 1253.
 (pdftex.def)             Requested size: 305.00226pt x 228.77626pt.
- [86
+ [89
 
- <./lecture_includes/es_br1544_RUCCcombined.png>] [87
+ <./lecture_includes/es_br1544_RUCCcombined.png>] [90
 
-] [88
+] [91
 
 ]
-<./lecture_includes/lasso_br1544.png, id=738, 1071.00125pt x 778.91pt>
+<./lecture_includes/lasso_br1544.png, id=748, 1071.00125pt x 778.91pt>
 File: ./lecture_includes/lasso_br1544.png Graphic file (type png)
 <use ./lecture_includes/lasso_br1544.png>
 Package pdftex.def Info: ./lecture_includes/lasso_br1544.png  used on input lin
-e 1236.
+e 1287.
 (pdftex.def)             Requested size: 314.55354pt x 228.77626pt.
 
-Overfull \vbox (18.77287pt too high) detected at line 1236
+Overfull \vbox (18.77287pt too high) detected at line 1287
  []
 
-[89
+[92
 
- <./lecture_includes/lasso_br1544.png>] [90
+ <./lecture_includes/lasso_br1544.png>] [93
 
 ]
-<./lecture_includes/es_births_allX.png, id=751, 1268.74pt x 922.44624pt>
+<./lecture_includes/es_births_allX.png, id=761, 1268.74pt x 922.44624pt>
 File: ./lecture_includes/es_births_allX.png Graphic file (type png)
 <use ./lecture_includes/es_births_allX.png>
 Package pdftex.def Info: ./lecture_includes/es_births_allX.png  used on input l
-ine 1258.
+ine 1309.
 (pdftex.def)             Requested size: 314.64813pt x 228.77626pt.
 
-Overfull \vbox (18.77287pt too high) detected at line 1258
+Overfull \vbox (18.77287pt too high) detected at line 1309
  []
 
-[91
+[94
 
- <./lecture_includes/es_births_allX.png>] [92
-
-] [93
-
-] [94
-
-] [95
-
-] [96
+ <./lecture_includes/es_births_allX.png>] [95
 
 ]
-<./lecture_includes/craig_dm.jpeg, id=789, 1132.23pt x 2391.93625pt>
-File: ./lecture_includes/craig_dm.jpeg Graphic file (type jpg)
-<use ./lecture_includes/craig_dm.jpeg>
-Package pdftex.def Info: ./lecture_includes/craig_dm.jpeg  used on input line 1
-351.
-(pdftex.def)             Requested size: 419.3811pt x 885.95152pt.
+pdfTeX warning (ext4): destination with the same identifier (name{tab:table1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1359 \end{frame}
+                   [96
 
+] [97
 
-Class beamer Warning: Frame text is shrunk by a factor of 70.22858 percent inst
-ead of 20 percent on input line 1351.
-
-[97
-
- <./lecture_includes/craig_dm.jpeg>] (./03-STG-GxT.toc) [98
-
-] [99
-
-] [100
+] [98
 
 ]
+<./lecture_includes/group_averages.png, id=795, 808.01875pt x 307.1475pt>
+File: ./lecture_includes/group_averages.png Graphic file (type png)
+<use ./lecture_includes/group_averages.png>
+Package pdftex.def Info: ./lecture_includes/group_averages.png  used on input l
+ine 1390.
+(pdftex.def)             Requested size: 317.48456pt x 120.68219pt.
+ [99
+
+ <./lecture_includes/group_averages.png>]
+<./lecture_includes/average1.png, id=803, 320.19624pt x 347.2975pt>
+File: ./lecture_includes/average1.png Graphic file (type png)
+<use ./lecture_includes/average1.png>
+Package pdftex.def Info: ./lecture_includes/average1.png  used on input line 14
+10.
+(pdftex.def)             Requested size: 150.38689pt x 163.11856pt.
+<./lecture_includes/average2.png, id=804, 377.91188pt x 344.28625pt>
+File: ./lecture_includes/average2.png Graphic file (type png)
+<use ./lecture_includes/average2.png>
+Package pdftex.def Info: ./lecture_includes/average2.png  used on input line 14
+10.
+(pdftex.def)             Requested size: 170.43779pt x 155.2741pt.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/n' aliased to
+(Font)              `OT1/Roboto-LF/light/n' on input line 1410.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/n' will be
+(Font)              scaled to size 12.0pt on input line 1410.
+
+[100
+
+ <./lecture_includes/average1.png> <./lecture_includes/average2.png>]
 [101
 
-] [102
+]
+pdfTeX warning (ext4): destination with the same identifier (name{tab:table1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1461 \end{frame}
+                   [102
 
 ] [103
 
 ] [104
 
-] [105
+]
+Overfull \vbox (3.87375pt too high) detected at line 1501
+ []
+
+[105
 
 ] [106
 
-]
-<./lecture_includes/timetil.jpg, id=861, 3272.225pt x 1687.30376pt>
-File: ./lecture_includes/timetil.jpg Graphic file (type jpg)
-<use ./lecture_includes/timetil.jpg>
-Package pdftex.def Info: ./lecture_includes/timetil.jpg  used on input line 146
-6.
-(pdftex.def)             Requested size: 654.43341pt x 337.45477pt.
+] [107
 
-Overfull \hbox (320.23805pt too wide) in paragraph at lines 1466--1466
- [] 
- []
-
-
-Overfull \vbox (122.61136pt too high) detected at line 1466
- []
-
-[107
-
- <./lecture_includes/timetil.jpg>] [108
+] [108
 
 ] [109
 
-] [110
+]
+<./lecture_includes/craig_dm.jpeg, id=870, 1132.23pt x 2391.93625pt>
+File: ./lecture_includes/craig_dm.jpeg Graphic file (type jpg)
+<use ./lecture_includes/craig_dm.jpeg>
+Package pdftex.def Info: ./lecture_includes/craig_dm.jpeg  used on input line 1
+560.
+(pdftex.def)             Requested size: 419.3811pt x 885.95152pt.
 
-] [111
+
+Class beamer Warning: Frame text is shrunk by a factor of 70.22858 percent inst
+ead of 20 percent on input line 1560.
+
+[110
+
+ <./lecture_includes/craig_dm.jpeg>] (./03-STG-GxT.toc) [111
 
 ] [112
 
-] [113
-
 ]
-[114
+[113
+
+] [114
 
 ] [115
 
@@ -2443,17 +2479,29 @@ Overfull \vbox (122.61136pt too high) detected at line 1466
 
 ] [117
 
-]
-Overfull \vbox (6.54399pt too high) detected at line 1605
- []
-
-[118
+] [118
 
 ] [119
 
-] [120
+]
+<./lecture_includes/timetil.jpg, id=939, 3272.225pt x 1687.30376pt>
+File: ./lecture_includes/timetil.jpg Graphic file (type jpg)
+<use ./lecture_includes/timetil.jpg>
+Package pdftex.def Info: ./lecture_includes/timetil.jpg  used on input line 167
+3.
+(pdftex.def)             Requested size: 654.43341pt x 337.45477pt.
 
-] [121
+Overfull \hbox (320.23805pt too wide) in paragraph at lines 1673--1673
+ [] 
+ []
+
+
+Overfull \vbox (122.61136pt too high) detected at line 1673
+ []
+
+[120
+
+ <./lecture_includes/timetil.jpg>] [121
 
 ] [122
 
@@ -2465,36 +2513,26 @@ Overfull \vbox (6.54399pt too high) detected at line 1605
 
 ] [126
 
-] [127
+]
+[127
 
 ] [128
 
 ] [129
 
-]
-[130
-
-] [131
+] [130
 
 ]
-<./lecture_includes/sa_leads.png, id=1020, 576.1525pt x 449.68pt>
-File: ./lecture_includes/sa_leads.png Graphic file (type png)
-<use ./lecture_includes/sa_leads.png>
-Package pdftex.def Info: ./lecture_includes/sa_leads.png  used on input line 17
-85.
-(pdftex.def)             Requested size: 259.26622pt x 202.35413pt.
- [132
+Overfull \vbox (6.54399pt too high) detected at line 1812
+ []
 
- <./lecture_includes/sa_leads.png>]
-<./lecture_includes/twfe_sa_event.png, id=1028, 606.265pt x 486.81876pt>
-File: ./lecture_includes/twfe_sa_event.png Graphic file (type png)
-<use ./lecture_includes/twfe_sa_event.png>
-Package pdftex.def Info: ./lecture_includes/twfe_sa_event.png  used on input li
-ne 1797.
-(pdftex.def)             Requested size: 242.5017pt x 194.72404pt.
- [133
+[131
 
- <./lecture_includes/twfe_sa_event.png>] [134
+] [132
+
+] [133
+
+] [134
 
 ] [135
 
@@ -2504,12 +2542,7 @@ ne 1797.
 
 ] [138
 
-]
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/n' aliased to
-(Font)              `OT1/Roboto-LF/light/n' on input line 1868.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/n' will be
-(Font)              scaled to size 12.0pt on input line 1868.
- [139
+] [139
 
 ] [140
 
@@ -2522,24 +2555,25 @@ LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/n' will be
 
 ] [144
 
-] [145
-
 ]
-Overfull \hbox (2.66795pt too wide) detected at line 1951
-\OML/cmm/m/it/10.95 DID[] \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^@ []
- []
+<./lecture_includes/sa_leads.png, id=1098, 576.1525pt x 449.68pt>
+File: ./lecture_includes/sa_leads.png Graphic file (type png)
+<use ./lecture_includes/sa_leads.png>
+Package pdftex.def Info: ./lecture_includes/sa_leads.png  used on input line 19
+92.
+(pdftex.def)             Requested size: 259.26622pt x 202.35413pt.
+ [145
 
-[146
+ <./lecture_includes/sa_leads.png>]
+<./lecture_includes/twfe_sa_event.png, id=1107, 606.265pt x 486.81876pt>
+File: ./lecture_includes/twfe_sa_event.png Graphic file (type png)
+<use ./lecture_includes/twfe_sa_event.png>
+Package pdftex.def Info: ./lecture_includes/twfe_sa_event.png  used on input li
+ne 2004.
+(pdftex.def)             Requested size: 242.5017pt x 194.72404pt.
+ [146
 
-]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 1966.
-
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/n' aliased to
-(Font)              `OT1/Roboto-LF/light/n' on input line 1966.
-LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/n' will be
-(Font)              scaled to size 7.0pt on input line 1966.
-[147
+ <./lecture_includes/twfe_sa_event.png>] [147
 
 ] [148
 
@@ -2549,22 +2583,13 @@ LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/n' will be
 
 ] [151
 
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+] [152
 
- [152
+] [153
 
-]
-[153]
-<./lecture_includes/step9_roth.png, id=1159, 2033.5975pt x 1636.1125pt>
-File: ./lecture_includes/step9_roth.png Graphic file (type png)
-<use ./lecture_includes/step9_roth.png>
-Package pdftex.def Info: ./lecture_includes/step9_roth.png  used on input line 
-2030.
-(pdftex.def)             Requested size: 284.32935pt x 228.77626pt.
- [154
+] [154
 
- <./lecture_includes/step9_roth.png>] (./03-STG-GxT.toc) [155
+] [155
 
 ]
 [156
@@ -2573,7 +2598,56 @@ Package pdftex.def Info: ./lecture_includes/step9_roth.png  used on input line
 
 ] [158
 
-] [159
+]
+Overfull \hbox (2.66795pt too wide) detected at line 2158
+\OML/cmm/m/it/10.95 DID[] \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^@ []
+ []
+
+[159
+
+]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 2173.
+
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/l/n' aliased to
+(Font)              `OT1/Roboto-LF/light/n' on input line 2173.
+LaTeX Font Info:    Font shape `OT1/Roboto-LF/light/n' will be
+(Font)              scaled to size 7.0pt on input line 2173.
+[160
+
+] [161
+
+] [162
+
+] [163
+
+] [164
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [165
+
+]
+[166]
+<./lecture_includes/step9_roth.png, id=1239, 2033.5975pt x 1636.1125pt>
+File: ./lecture_includes/step9_roth.png Graphic file (type png)
+<use ./lecture_includes/step9_roth.png>
+Package pdftex.def Info: ./lecture_includes/step9_roth.png  used on input line 
+2237.
+(pdftex.def)             Requested size: 284.32935pt x 228.77626pt.
+ [167
+
+ <./lecture_includes/step9_roth.png>] (./03-STG-GxT.toc) [168
+
+]
+[169
+
+] [170
+
+] [171
+
+] [172
 
 ]
 \tf@nav=\write6
@@ -2589,39 +2663,43 @@ Package pdftex.def Info: ./lecture_includes/step9_roth.png  used on input line
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `03-STG-GxT.out' has not changed.
-(rerunfilecheck)             Checksum: 0657B011EBDB107B3150FF9E085D387A;2020.
+(rerunfilecheck)             Checksum: A866AD62DFF2782B717F7E1CC49440DF;1727.
  ) 
 Here is how much of TeX's memory you used:
- 44284 strings out of 476025
- 947448 string characters out of 5790017
+ 44452 strings out of 476025
+ 950079 string characters out of 5790017
  1863388 words of memory out of 5000000
- 63337 multiletter control sequences out of 15000+600000
- 547143 words of font info for 148 fonts, out of 8000000 for 9000
+ 63416 multiletter control sequences out of 15000+600000
+ 556128 words of font info for 189 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,122p,1007b,692s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/google/roboto/Roboto-Bold.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/google/roboto/Roboto-Light.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/google/roboto/Roboto-LightItal
-ic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
-0.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.
-pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pf
-b></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/l
-ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
-l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
-/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/t
-exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/tex
-live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texli
-ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texliv
-e/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on 03-STG-GxT.pdf (159 pages, 8101450 bytes).
+ic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+0.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.p
+fb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
+/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/te
+xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
+e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
+/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on 03-STG-GxT.pdf (172 pages, 8677771 bytes).
 PDF statistics:
- 1360 PDF objects out of 1440 (max. 8388607)
- 1056 compressed objects within 11 object streams
- 330 named destinations out of 1000 (max. 500000)
- 39896 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 1448 PDF objects out of 1728 (max. 8388607)
+ 1123 compressed objects within 12 object streams
+ 355 named destinations out of 1000 (max. 500000)
+ 62431 words of extra memory for PDF output out of 74296 (max. 10000000)
 
