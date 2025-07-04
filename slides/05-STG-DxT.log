@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.14)  4 JUL 2025 13:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.14)  4 JUL 2025 13:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2023,6 +2023,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 ] [59
 
+] [60
+
 ]
 \tf@nav=\write6
 \openout6 = `05-STG-DxT.nav'.
@@ -2041,10 +2043,10 @@ Package rerunfilecheck Info: File `05-STG-DxT.out' has not changed.
 (rerunfilecheck)             Checksum: 78644BE74EBD106A26A241216109AA61;961.
  ) 
 Here is how much of TeX's memory you used:
- 43496 strings out of 476025
- 930920 string characters out of 5790017
+ 43500 strings out of 476025
+ 930957 string characters out of 5790017
  1860388 words of memory out of 5000000
- 62816 multiletter control sequences out of 15000+600000
+ 62818 multiletter control sequences out of 15000+600000
  541712 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,1007b,488s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2066,10 +2068,10 @@ local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/lo
 cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/loc
 al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/loca
 l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on 05-STG-DxT.pdf (59 pages, 4626740 bytes).
+Output written on 05-STG-DxT.pdf (60 pages, 4628270 bytes).
 PDF statistics:
- 620 PDF objects out of 1000 (max. 8388607)
- 453 compressed objects within 5 object streams
- 126 named destinations out of 1000 (max. 500000)
+ 627 PDF objects out of 1000 (max. 8388607)
+ 459 compressed objects within 5 object streams
+ 128 named destinations out of 1000 (max. 500000)
  36173 words of extra memory for PDF output out of 42996 (max. 10000000)
 
