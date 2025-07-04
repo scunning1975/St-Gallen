@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Continuous DiD}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Dx2 and DxT}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Target Parameters}{7}{0}{1}
+\beamer@subsectionintoc {1}{3}{Identification}{20}{0}{1}
+\beamer@subsectionintoc {1}{4}{Selection bias}{27}{0}{1}
+\beamer@subsectionintoc {1}{5}{Interpreting TWFE}{34}{0}{1}
+\beamer@sectionintoc {2}{Estimation and an Example}{41}{0}{2}
