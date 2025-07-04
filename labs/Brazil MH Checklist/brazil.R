@@ -148,6 +148,7 @@ panelview(homicide_rate ~ ca,
           ylab = "Brazil municipalities",
           by.timing = TRUE,
           pre.post = TRUE,
+          display.all = TRUE,
           legend.labs = NULL,    # This removes the legend
           main = "Rollout of CAPS Centers")
 
@@ -385,6 +386,9 @@ summary(brazil_2002$pscore[brazil_2002$treat == 1 & !is.na(brazil_2002$pscore)])
 high_pscore_count <- sum(brazil_2002$pscore > 0.995 & brazil_2002$treat == 0, na.rm = TRUE)
 cat("\nNumber of control units with pscore > 0.995:", high_pscore_count, "(not dropping)\n")
 
+selected <- as.data.frame(na.omit(brazil_2002$pscore[brazil_2002$pscore > 0.995 & brazil_2002$treat == 0]))
+
+
 # Step 8: estimate with CS (no trimming)
 
 # Test with just rural
@@ -511,6 +515,7 @@ cs_final_controls <- att_gt(yname = "homicide_rate",
                             data = brazil,
                             est_method = "dr",
                             control_group = "notyettreated",
+                            base_period="universal",
                             bstrap = TRUE,
                             biters = 1000)
 
@@ -518,6 +523,8 @@ cs_final_controls <- att_gt(yname = "homicide_rate",
 cs_simple <- aggte(cs_final_controls, type = "simple")
 cs_event <- aggte(cs_final_controls, type = "dynamic")
 cs_group <- aggte(cs_final_controls, type = "group")
+cs_calendar <- aggte(cs_final_controls, type = "calendar")
+
 
 cat("Simple aggregation:\n")
 summary(cs_simple)
