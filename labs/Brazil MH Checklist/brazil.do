@@ -127,7 +127,7 @@ restore
 
 
 * Step 3. Plot the treatment rollout using grayscale colors
-panelview homicide_rate ca, prepost bytiming i(cod) t(ano) type(treat) xtitle("Year") ylabel(none) ytitle("Brazil municipalities") mycolor("#f0f0f0" "#a0a0a0" "#505050") title("Rollout of CAPS Centers") legend(label(1 "Never Treated") label(2 "Treated (Pre)") label(3 "Treated (Post)"))
+panelview homicide_rate ca, bytiming i(cod) t(ano) type(treat) xtitle("Year") ylabel(none) ytitle("Brazil municipalities") mycolor("#f0f0f0" "#a0a0a0" "#505050") title("Rollout of CAPS Centers") legend(label(1 "Never Treated") label(2 "Treated (Pre)") label(3 "Treated (Post)"))
 graph export "./brazil_rollout.png", as(png) name("Graph") replace width(2000)
 
 * Step 4. Plot evolution of homicide_rate by cohort

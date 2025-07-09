@@ -5,6 +5,7 @@
 ################################################################################
 
 library(contdid)
+# https://github.com/bcallaway11/contdid
 library(haven)
 library(dplyr)
 library(tidyr)  
