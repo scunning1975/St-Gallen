@@ -84,8 +84,8 @@ xtreg l_homicide c.treat#c.post i.year [aw=popwt], fe vce(cluster sid)
 
 * Regression Example 3: Regress "long difference" onto treatment dummy
 preserve
-    keep sid year l_homicide popwt treat
-    reshape wide l_homicide popwt, i(sid) j(year)
+    keep sid year l_homicide popwt treat blackm_15_24 whitem_15_24 blackm_25_44 whitem_25_44
+    reshape wide l_homicide popwt blackm_15_24 whitem_15_24 blackm_25_44 whitem_25_44 , i(sid) j(year)
     gen diff = l_homicide2006 - l_homicide2005
     reg diff treat [aw=popwt2005], vce(cluster sid)
 restore
